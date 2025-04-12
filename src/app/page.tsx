@@ -1,52 +1,92 @@
 import Link from "next/link";
-import { BiTargetLock, BiUserPlus, BiBarChartAlt2 } from "react-icons/bi";
+import { FaBullseye, FaUser, FaChartBar, FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-180px)]">
-      <div className="text-center mb-12 max-w-3xl">
-        <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 inline-block text-transparent bg-clip-text">
-          Välkommen till Dart Tracker
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300">
-          Håll reda på dina dart-matcher, spelare och statistik på ett enkelt och smidigt sätt
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
-        <Link 
-          href="/game" 
-          className="group flex flex-col items-center p-8 bg-gradient-to-br from-red-500 to-red-700 text-white rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-lg"
-        >
-          <div className="bg-red-600/30 p-6 rounded-full mb-6 group-hover:bg-red-600/50 transition-colors">
-            <BiTargetLock className="text-6xl" />
+    <div className="container mx-auto px-container">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+        <div className="max-w-3xl mb-12">
+          <h1 className="mb-8">
+            <span className="block gold-accent mb-2">Välkommen till</span>
+            <span className="block text-cream">Dart Scorer</span>
+          </h1>
+          <div className="divider my-8 w-32 mx-auto"></div>
+          <p className="text-lg text-gray-300 mb-8 max-w-content mx-auto">
+            Håll reda på dina dart-matcher, spelare och statistik på ett elegant och effektivt sätt
+          </p>
+          <Link href="/game" className="inline-block">
+            <button className="mt-4 py-4 px-8">
+              Starta nytt spel
+              <FaArrowRight className="ml-2" />
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="my-section">
+        <h2 className="text-center mb-12">Fantastiska funktioner</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="luxury-card group hover:border-accent-secondary">
+            <div className="card-header">
+              <h3 className="card-title">Spel</h3>
+              <span className="icon icon-lg icon-primary">
+                <FaBullseye />
+              </span>
+            </div>
+            <p>Starta och spela dart-matcher med dina vänner. Räkna poäng och håll koll på turneringar.</p>
+            <Link href="/game" className="flex items-center mt-4 underline-effect">
+              <span>Börja spela</span>
+              <FaArrowRight className="ml-2 text-xs" />
+            </Link>
           </div>
-          <h2 className="text-2xl font-semibold mb-3">Starta nytt spel</h2>
-          <p className="text-center opacity-90">Skapa och spela ett nytt dart-spel</p>
-        </Link>
-        
-        <Link 
-          href="/players" 
-          className="group flex flex-col items-center p-8 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-lg"
-        >
-          <div className="bg-blue-600/30 p-6 rounded-full mb-6 group-hover:bg-blue-600/50 transition-colors">
-            <BiUserPlus className="text-6xl" />
+          
+          <div className="luxury-card group hover:border-accent-secondary">
+            <div className="card-header">
+              <h3 className="card-title">Spelare</h3>
+              <span className="icon icon-lg icon-primary">
+                <FaUser />
+              </span>
+            </div>
+            <p>Skapa och hantera spelare med individuella profiler. Lägg till information och håll koll på prestationer.</p>
+            <Link href="/players" className="flex items-center mt-4 underline-effect">
+              <span>Hantera spelare</span>
+              <FaArrowRight className="ml-2 text-xs" />
+            </Link>
           </div>
-          <h2 className="text-2xl font-semibold mb-3">Hantera spelare</h2>
-          <p className="text-center opacity-90">Lägg till, redigera eller ta bort spelare</p>
-        </Link>
-        
-        <Link 
-          href="/stats" 
-          className="group flex flex-col items-center p-8 bg-gradient-to-br from-green-500 to-green-700 text-white rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-lg"
-        >
-          <div className="bg-green-600/30 p-6 rounded-full mb-6 group-hover:bg-green-600/50 transition-colors">
-            <BiBarChartAlt2 className="text-6xl" />
+          
+          <div className="luxury-card group hover:border-accent-secondary">
+            <div className="card-header">
+              <h3 className="card-title">Statistik</h3>
+              <span className="icon icon-lg icon-primary">
+                <FaChartBar />
+              </span>
+            </div>
+            <p>Analysera spelstatistik för att förbättra ditt spel. Se trender, genomsnitt och höjdpunkter.</p>
+            <Link href="/stats" className="flex items-center mt-4 underline-effect">
+              <span>Visa statistik</span>
+              <FaArrowRight className="ml-2 text-xs" />
+            </Link>
           </div>
-          <h2 className="text-2xl font-semibold mb-3">Visa statistik</h2>
-          <p className="text-center opacity-90">Kontrollera spelhistorik och spelarstatistik</p>
-        </Link>
-      </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="my-section py-16 bg-gradient-luxury rounded-lg border-l-3 border-accent-primary p-8 shadow-luxury">
+        <div className="text-center">
+          <h2 className="mb-4">Börja använda Dart Scorer idag</h2>
+          <p className="mb-8 max-w-content mx-auto">
+            Ta ditt dartspel till nästa nivå med vår eleganta och kraftfulla applikation
+          </p>
+          <Link href="/game">
+            <button className="gold">
+              Starta ditt första spel
+              <FaArrowRight className="ml-2" />
+            </button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

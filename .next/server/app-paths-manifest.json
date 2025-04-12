@@ -1,4 +1,8 @@
 {
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/game/[id]/page": "app/game/[id]/page.js",
+  "/game/page": "app/game/page.js",
+  "/page": "app/page.js",
+  "/players/page": "app/players/page.js",
+  "/stats/page": "app/stats/page.js"
 }
