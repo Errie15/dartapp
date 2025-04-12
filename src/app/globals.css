@@ -603,6 +603,16 @@ button:disabled {
   padding: 0.5rem;
 }
 
+/* Compact Number Pad */
+.compact-number-pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.3rem 0;
+}
+
 .number-pad-btn {
   background-color: var(--black-charcoal);
   color: var(--cream);
@@ -644,19 +654,94 @@ button:disabled {
   font-weight: 700;
   padding: 0.5rem 1rem;
   text-align: right;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   width: 100%;
-  max-width: 320px;
   letter-spacing: 0.05em;
 }
 
 /* Quick Score Buttons */
 .quick-score-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.3rem;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 480px) {
+  .quick-score-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .compact-score-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .quick-score-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .quick-score-btn {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+    min-height: 38px;
+  }
+  
+  .compact-score-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .compact-score-btn {
+    font-size: 0.75rem;
+    padding: 0.2rem;
+    min-height: 36px;
+  }
+  
+  .compact-number-pad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Compact Score Buttons */
+.compact-score-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.compact-score-btn {
+  background-color: var(--black-charcoal);
+  color: var(--cream);
+  border: 1px solid var(--gray-800);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.compact-score-btn[class*="border-red-crimson"] {
+  border: 1px solid var(--red-crimson);
+  background-color: rgba(220, 20, 60, 0.08);
+}
+
+.compact-score-btn[class*="border-gold-accent"] {
+  border: 1px solid var(--gold-accent);
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+.compact-score-btn:active {
+  transform: scale(0.95);
+  background-color: var(--black-smoke);
 }
 
 .quick-score-btn {
@@ -664,16 +749,26 @@ button:disabled {
   color: var(--cream);
   border: 1px solid var(--gray-800);
   border-radius: var(--border-radius-sm);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.5rem;
-  min-height: 44px;
+  padding: 0.35rem;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   user-select: none;
   transition: all 0.15s ease;
+}
+
+.quick-score-btn[class*="border-red-crimson"] {
+  border: 1px solid var(--red-crimson);
+  background-color: rgba(220, 20, 60, 0.08);
+}
+
+.quick-score-btn[class*="border-gold-accent"] {
+  border: 1px solid var(--gold-accent);
+  background-color: rgba(212, 175, 55, 0.08);
 }
 
 .quick-score-btn:active {
