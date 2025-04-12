@@ -272,7 +272,7 @@ function StatsPage() {
                 className: "mb-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                        className: "block font-medium mb-2 text-white",
+                        className: "block font-medium mb-2",
                         htmlFor: "player-filter",
                         children: "Filter by Player"
                     }, void 0, false, {
@@ -284,7 +284,7 @@ function StatsPage() {
                         id: "player-filter",
                         value: selectedPlayer,
                         onChange: (e)=>setSelectedPlayer(e.target.value),
-                        className: "w-full md:w-64 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
+                        className: "w-full md:w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                 value: "all",
@@ -315,10 +315,10 @@ function StatsPage() {
                 columnNumber: 7
             }, this),
             selectedPlayer !== "all" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gray-900 rounded-lg shadow-md overflow-hidden mb-8 border border-gray-700",
+                className: "bg-white rounded-lg shadow-md overflow-hidden mb-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-semibold p-4 bg-gray-800 text-white",
+                        className: "text-xl font-semibold p-4 bg-gray-100",
                         children: [
                             "Player Statistics: ",
                             getPlayerName(selectedPlayer)
@@ -331,7 +331,7 @@ function StatsPage() {
                     (()=>{
                         const player = players.find((p)=>p.id === selectedPlayer);
                         if (!player) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "p-4 text-white",
+                            className: "p-4",
                             children: "Player not found"
                         }, void 0, false, {
                             fileName: "[project]/src/app/stats/page.tsx",
@@ -346,17 +346,17 @@ function StatsPage() {
                                     className: "grid grid-cols-1 md:grid-cols-3 gap-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-blue-900 rounded-lg p-4 flex flex-col items-center",
+                                            className: "bg-blue-50 rounded-lg p-4 flex flex-col items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaDice"], {
-                                                    className: "text-3xl text-blue-300 mb-2"
+                                                    className: "text-3xl text-blue-500 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
                                                     lineNumber: 138,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "font-medium text-lg mb-1 text-white",
+                                                    className: "font-medium text-lg mb-1",
                                                     children: "Games"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -364,7 +364,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-3xl font-bold text-white",
+                                                    className: "text-3xl font-bold",
                                                     children: stats.gamesPlayed
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -372,7 +372,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-sm text-blue-200 mt-1",
+                                                    className: "text-sm text-gray-500 mt-1",
                                                     children: [
                                                         stats.gamesCompleted,
                                                         " completed"
@@ -389,17 +389,17 @@ function StatsPage() {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-green-900 rounded-lg p-4 flex flex-col items-center",
+                                            className: "bg-green-50 rounded-lg p-4 flex flex-col items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaTrophy"], {
-                                                    className: "text-3xl text-green-300 mb-2"
+                                                    className: "text-3xl text-green-500 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
                                                     lineNumber: 147,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "font-medium text-lg mb-1 text-white",
+                                                    className: "font-medium text-lg mb-1",
                                                     children: "Wins"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -407,7 +407,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-3xl font-bold text-white",
+                                                    className: "text-3xl font-bold",
                                                     children: stats.gamesWon
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -415,7 +415,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-sm text-green-200 mt-1",
+                                                    className: "text-sm text-gray-500 mt-1",
                                                     children: [
                                                         stats.winRate,
                                                         "% win rate"
@@ -432,17 +432,17 @@ function StatsPage() {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-red-900 rounded-lg p-4 flex flex-col items-center",
+                                            className: "bg-red-50 rounded-lg p-4 flex flex-col items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaBullseye"], {
-                                                    className: "text-3xl text-red-300 mb-2"
+                                                    className: "text-3xl text-red-500 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
                                                     lineNumber: 156,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "font-medium text-lg mb-1 text-white",
+                                                    className: "font-medium text-lg mb-1",
                                                     children: "Performance"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -450,7 +450,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-3xl font-bold text-white",
+                                                    className: "text-3xl font-bold",
                                                     children: stats.avgScorePerThrow
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -458,7 +458,7 @@ function StatsPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-sm text-red-200 mt-1",
+                                                    className: "text-sm text-gray-500 mt-1",
                                                     children: "avg. points per throw"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stats/page.tsx",
@@ -482,7 +482,7 @@ function StatsPage() {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-medium text-lg mb-3 text-white",
+                                                className: "font-medium text-lg mb-3",
                                                 children: "Additional Stats"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stats/page.tsx",
@@ -490,7 +490,7 @@ function StatsPage() {
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                className: "space-y-2 text-gray-300",
+                                                className: "space-y-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         className: "flex justify-between",
@@ -503,7 +503,7 @@ function StatsPage() {
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "font-medium text-white",
+                                                                className: "font-medium",
                                                                 children: stats.totalThrows
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stats/page.tsx",
@@ -527,7 +527,7 @@ function StatsPage() {
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "font-medium text-white",
+                                                                className: "font-medium",
                                                                 children: stats.highestScoreThrow
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stats/page.tsx",
@@ -571,10 +571,10 @@ function StatsPage() {
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700",
+                className: "bg-white rounded-lg shadow-md overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-semibold p-4 bg-gray-800 text-white",
+                        className: "text-xl font-semibold p-4 bg-gray-100",
                         children: selectedPlayer === "all" ? "Recent Games" : "Recent Games for " + getPlayerName(selectedPlayer)
                     }, void 0, false, {
                         fileName: "[project]/src/app/stats/page.tsx",
@@ -582,7 +582,7 @@ function StatsPage() {
                         columnNumber: 9
                     }, this),
                     latestGames.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-8 text-center text-gray-300",
+                        className: "p-8 text-center text-gray-500",
                         children: "No games found"
                     }, void 0, false, {
                         fileName: "[project]/src/app/stats/page.tsx",
@@ -591,11 +591,11 @@ function StatsPage() {
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "overflow-x-auto",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-                            className: "w-full text-left text-white",
+                            className: "w-full text-left",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                        className: "bg-gray-800",
+                                        className: "bg-gray-50",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 className: "p-4 font-medium",
@@ -648,12 +648,12 @@ function StatsPage() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                    className: "divide-y divide-gray-700",
+                                    className: "divide-y divide-gray-200",
                                     children: latestGames.map((game)=>{
                                         const durationMs = (game.endedAt || 0) - game.createdAt;
                                         const durationMin = Math.floor(durationMs / 60000);
                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                            className: "hover:bg-gray-800",
+                                            className: "hover:bg-gray-50",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     className: "p-4",

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dart Tracker",
-  description: "Håll koll på dina dartpoäng och statistik",
+  description: "Track your dart game scores and statistics",
 };
 
 export default function RootLayout({
@@ -24,10 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
-        style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         <main className="container mx-auto p-4">

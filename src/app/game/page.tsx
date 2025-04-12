@@ -42,14 +42,14 @@ export default function GameSetupPage() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Player Selection */}
-        <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700">
-          <h2 className="text-xl font-semibold p-4 bg-gray-800 text-white">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <h2 className="text-xl font-semibold p-4 bg-gray-100">
             Select Players ({selectedPlayers.length}/10)
           </h2>
           
           {players.length === 0 ? (
             <div className="p-4 text-center">
-              <p className="text-gray-300 mb-4">No players added yet.</p>
+              <p className="text-gray-500 mb-4">No players added yet.</p>
               <button
                 onClick={() => router.push("/players")}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -58,7 +58,7 @@ export default function GameSetupPage() {
               </button>
             </div>
           ) : (
-            <ul className="divide-y divide-gray-700">
+            <ul className="divide-y divide-gray-200">
               {players.map((player: Player) => (
                 <li key={player.id} className="p-4">
                   <label className="flex items-center space-x-3 cursor-pointer">
@@ -68,7 +68,7 @@ export default function GameSetupPage() {
                       onChange={() => handlePlayerToggle(player.id)}
                       className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
                     />
-                    <span className="font-medium text-white">{player.name}</span>
+                    <span className="font-medium">{player.name}</span>
                   </label>
                 </li>
               ))}
@@ -77,12 +77,12 @@ export default function GameSetupPage() {
         </div>
         
         {/* Game Settings */}
-        <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700">
-          <h2 className="text-xl font-semibold p-4 bg-gray-800 text-white">Game Settings</h2>
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <h2 className="text-xl font-semibold p-4 bg-gray-100">Game Settings</h2>
           
           <div className="p-4 space-y-4">
             <div>
-              <label className="block font-medium mb-2 text-white" htmlFor="starting-score">
+              <label className="block font-medium mb-2" htmlFor="starting-score">
                 Starting Score
               </label>
               <div className="flex gap-2 mb-2">
@@ -94,7 +94,7 @@ export default function GameSetupPage() {
                     className={`px-4 py-2 rounded-md ${
                       startingScore === score
                         ? "bg-blue-600 text-white"
-                        : "bg-gray-700 text-white hover:bg-gray-600"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                     } transition-colors`}
                   >
                     {score}
@@ -107,7 +107,7 @@ export default function GameSetupPage() {
                 value={startingScore}
                 onChange={(e) => setStartingScore(parseInt(e.target.value) || 0)}
                 min="1"
-                className="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             
@@ -117,7 +117,7 @@ export default function GameSetupPage() {
                 disabled={selectedPlayers.length === 0}
                 className={`w-full py-3 rounded-md ${
                   selectedPlayers.length === 0
-                    ? "bg-gray-600 cursor-not-allowed"
+                    ? "bg-gray-400 cursor-not-allowed"
                     : "bg-green-600 hover:bg-green-700"
                 } text-white transition-colors font-semibold text-lg`}
               >

@@ -215,7 +215,7 @@ function EditPlayerForm({ player, onSave, onCancel }) {
                 type: "text",
                 value: name,
                 onChange: (e)=>setName(e.target.value),
-                className: "flex-1 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
+                className: "flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
                 "aria-label": "Edit player name"
             }, void 0, false, {
                 fileName: "[project]/src/app/players/page.tsx",
@@ -234,7 +234,7 @@ function EditPlayerForm({ player, onSave, onCancel }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 type: "button",
                 onClick: onCancel,
-                className: "px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors",
+                className: "px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors",
                 children: "Cancel"
             }, void 0, false, {
                 fileName: "[project]/src/app/players/page.tsx",
@@ -288,10 +288,10 @@ function PlayersPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                 onSubmit: handleAddPlayer,
-                className: "mb-8 p-4 bg-gray-800 rounded-lg border border-gray-700",
+                className: "mb-8 p-4 bg-gray-100 rounded-lg",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-semibold mb-4 text-white",
+                        className: "text-xl font-semibold mb-4",
                         children: "Add New Player"
                     }, void 0, false, {
                         fileName: "[project]/src/app/players/page.tsx",
@@ -306,7 +306,7 @@ function PlayersPage() {
                                 value: newPlayerName,
                                 onChange: (e)=>setNewPlayerName(e.target.value),
                                 placeholder: "Enter player name",
-                                className: "flex-1 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-300"
+                                className: "flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/players/page.tsx",
                                 lineNumber: 88,
@@ -341,10 +341,10 @@ function PlayersPage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700",
+                className: "bg-white rounded-lg shadow-md overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-semibold p-4 bg-gray-800 text-white",
+                        className: "text-xl font-semibold p-4 bg-gray-100",
                         children: "Players"
                     }, void 0, false, {
                         fileName: "[project]/src/app/players/page.tsx",
@@ -352,14 +352,14 @@ function PlayersPage() {
                         columnNumber: 9
                     }, this),
                     players.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "p-4 text-gray-300 text-center",
+                        className: "p-4 text-gray-500 text-center",
                         children: "No players added yet. Add a player to get started."
                     }, void 0, false, {
                         fileName: "[project]/src/app/players/page.tsx",
                         lineNumber: 109,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                        className: "divide-y divide-gray-700",
+                        className: "divide-y divide-gray-200",
                         children: players.map((player)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                 className: "p-4 flex items-center justify-between",
                                 children: editingPlayerId === player.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(EditPlayerForm, {
@@ -373,7 +373,7 @@ function PlayersPage() {
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-medium text-white",
+                                            className: "font-medium",
                                             children: player.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/players/page.tsx",
@@ -385,7 +385,7 @@ function PlayersPage() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>setEditingPlayerId(player.id),
-                                                    className: "p-2 text-blue-400 hover:text-blue-300 transition-colors",
+                                                    className: "p-2 text-blue-600 hover:text-blue-800 transition-colors",
                                                     "aria-label": "Edit player",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaEdit"], {}, void 0, false, {
                                                         fileName: "[project]/src/app/players/page.tsx",
@@ -399,7 +399,7 @@ function PlayersPage() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>removePlayer(player.id),
-                                                    className: "p-2 text-red-400 hover:text-red-300 transition-colors",
+                                                    className: "p-2 text-red-600 hover:text-red-800 transition-colors",
                                                     "aria-label": "Delete player",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaTrash"], {}, void 0, false, {
                                                         fileName: "[project]/src/app/players/page.tsx",

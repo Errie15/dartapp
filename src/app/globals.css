@@ -1,10 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
@@ -22,63 +20,7 @@
 }
 
 body {
-  background-color: var(--background);
+  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-}
-
-/* Fallback styling om Tailwind inte laddas korrekt */
-.bg-black {
-  background-color: #0a0a0a !important;
-}
-
-.text-white {
-  color: #ffffff !important;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-a {
-  color: #3b82f6;
-}
-
-input, select, textarea {
-  background-color: #1f2937 !important;
-  color: #ffffff !important;
-  border: 1px solid #4b5563 !important;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-}
-
-input::placeholder {
-  color: #9ca3af !important;
-}
-
-label {
-  color: #ffffff !important;
-}
-
-tr, td, th {
-  border-color: #4b5563 !important;
-}
-
-button {
-  color: #ffffff !important;
-}
-
-table {
-  color: #ffffff !important;
-}
-
-.bg-gray-900, .bg-gray-800, .bg-gray-700 {
-  background-color: #111827 !important;
-}
-
-p {
-  color: #e5e7eb !important;
 }

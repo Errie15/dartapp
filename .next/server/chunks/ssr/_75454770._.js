@@ -232,10 +232,10 @@ function GameSetupPage() {
                 className: "grid grid-cols-1 md:grid-cols-2 gap-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700",
+                        className: "bg-white rounded-lg shadow-md overflow-hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-xl font-semibold p-4 bg-gray-800 text-white",
+                                className: "text-xl font-semibold p-4 bg-gray-100",
                                 children: [
                                     "Select Players (",
                                     selectedPlayers.length,
@@ -250,7 +250,7 @@ function GameSetupPage() {
                                 className: "p-4 text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-300 mb-4",
+                                        className: "text-gray-500 mb-4",
                                         children: "No players added yet."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/game/page.tsx",
@@ -272,7 +272,7 @@ function GameSetupPage() {
                                 lineNumber: 51,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                className: "divide-y divide-gray-700",
+                                className: "divide-y divide-gray-200",
                                 children: players.map((player)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         className: "p-4",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -289,7 +289,7 @@ function GameSetupPage() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "font-medium text-white",
+                                                    className: "font-medium",
                                                     children: player.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/game/page.tsx",
@@ -319,10 +319,10 @@ function GameSetupPage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700",
+                        className: "bg-white rounded-lg shadow-md overflow-hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-xl font-semibold p-4 bg-gray-800 text-white",
+                                className: "text-xl font-semibold p-4 bg-gray-100",
                                 children: "Game Settings"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/game/page.tsx",
@@ -335,7 +335,7 @@ function GameSetupPage() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                className: "block font-medium mb-2 text-white",
+                                                className: "block font-medium mb-2",
                                                 htmlFor: "starting-score",
                                                 children: "Starting Score"
                                             }, void 0, false, {
@@ -348,7 +348,7 @@ function GameSetupPage() {
                                                 children: commonScores.map((score)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         type: "button",
                                                         onClick: ()=>setStartingScore(score),
-                                                        className: `px-4 py-2 rounded-md ${startingScore === score ? "bg-blue-600 text-white" : "bg-gray-700 text-white hover:bg-gray-600"} transition-colors`,
+                                                        className: `px-4 py-2 rounded-md ${startingScore === score ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"} transition-colors`,
                                                         children: score
                                                     }, score, false, {
                                                         fileName: "[project]/src/app/game/page.tsx",
@@ -366,7 +366,7 @@ function GameSetupPage() {
                                                 value: startingScore,
                                                 onChange: (e)=>setStartingScore(parseInt(e.target.value) || 0),
                                                 min: "1",
-                                                className: "w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/game/page.tsx",
                                                 lineNumber: 104,
@@ -383,7 +383,7 @@ function GameSetupPage() {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: handleStartGame,
                                             disabled: selectedPlayers.length === 0,
-                                            className: `w-full py-3 rounded-md ${selectedPlayers.length === 0 ? "bg-gray-600 cursor-not-allowed" : "bg-green-600 hover:bg-green-700"} text-white transition-colors font-semibold text-lg`,
+                                            className: `w-full py-3 rounded-md ${selectedPlayers.length === 0 ? "bg-gray-400 cursor-not-allowed" : "bg-green-600 hover:bg-green-700"} text-white transition-colors font-semibold text-lg`,
                                             children: "Start Game"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/game/page.tsx",
