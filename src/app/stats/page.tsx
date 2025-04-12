@@ -100,14 +100,14 @@ export default function StatsPage() {
       
       {/* Player Filter */}
       <div className="mb-8">
-        <label className="block font-medium mb-2" htmlFor="player-filter">
+        <label className="block font-medium mb-2 text-white" htmlFor="player-filter">
           Filter by Player
         </label>
         <select
           id="player-filter"
           value={selectedPlayer}
           onChange={(e) => setSelectedPlayer(e.target.value)}
-          className="w-full md:w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full md:w-64 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="all">All Players</option>
           {players.map(player => (
@@ -120,43 +120,43 @@ export default function StatsPage() {
       
       {/* Player Stats */}
       {selectedPlayer !== "all" && (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-          <h2 className="text-xl font-semibold p-4 bg-gray-100">
+        <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden mb-8 border border-gray-700">
+          <h2 className="text-xl font-semibold p-4 bg-gray-800 text-white">
             Player Statistics: {getPlayerName(selectedPlayer)}
           </h2>
           
           {(() => {
             const player = players.find(p => p.id === selectedPlayer);
-            if (!player) return <div className="p-4">Player not found</div>;
+            if (!player) return <div className="p-4 text-white">Player not found</div>;
             
             const stats = calculatePlayerStats(player);
             
             return (
               <div className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-blue-50 rounded-lg p-4 flex flex-col items-center">
-                    <FaDice className="text-3xl text-blue-500 mb-2" />
-                    <h3 className="font-medium text-lg mb-1">Games</h3>
-                    <div className="text-3xl font-bold">{stats.gamesPlayed}</div>
-                    <div className="text-sm text-gray-500 mt-1">
+                  <div className="bg-blue-900 rounded-lg p-4 flex flex-col items-center">
+                    <FaDice className="text-3xl text-blue-300 mb-2" />
+                    <h3 className="font-medium text-lg mb-1 text-white">Games</h3>
+                    <div className="text-3xl font-bold text-white">{stats.gamesPlayed}</div>
+                    <div className="text-sm text-blue-200 mt-1">
                       {stats.gamesCompleted} completed
                     </div>
                   </div>
                   
-                  <div className="bg-green-50 rounded-lg p-4 flex flex-col items-center">
-                    <FaTrophy className="text-3xl text-green-500 mb-2" />
-                    <h3 className="font-medium text-lg mb-1">Wins</h3>
-                    <div className="text-3xl font-bold">{stats.gamesWon}</div>
-                    <div className="text-sm text-gray-500 mt-1">
+                  <div className="bg-green-900 rounded-lg p-4 flex flex-col items-center">
+                    <FaTrophy className="text-3xl text-green-300 mb-2" />
+                    <h3 className="font-medium text-lg mb-1 text-white">Wins</h3>
+                    <div className="text-3xl font-bold text-white">{stats.gamesWon}</div>
+                    <div className="text-sm text-green-200 mt-1">
                       {stats.winRate}% win rate
                     </div>
                   </div>
                   
-                  <div className="bg-red-50 rounded-lg p-4 flex flex-col items-center">
-                    <FaBullseye className="text-3xl text-red-500 mb-2" />
-                    <h3 className="font-medium text-lg mb-1">Performance</h3>
-                    <div className="text-3xl font-bold">{stats.avgScorePerThrow}</div>
-                    <div className="text-sm text-gray-500 mt-1">
+                  <div className="bg-red-900 rounded-lg p-4 flex flex-col items-center">
+                    <FaBullseye className="text-3xl text-red-300 mb-2" />
+                    <h3 className="font-medium text-lg mb-1 text-white">Performance</h3>
+                    <div className="text-3xl font-bold text-white">{stats.avgScorePerThrow}</div>
+                    <div className="text-sm text-red-200 mt-1">
                       avg. points per throw
                     </div>
                   </div>
@@ -164,15 +164,15 @@ export default function StatsPage() {
                 
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="font-medium text-lg mb-3">Additional Stats</h3>
-                    <ul className="space-y-2">
+                    <h3 className="font-medium text-lg mb-3 text-white">Additional Stats</h3>
+                    <ul className="space-y-2 text-gray-300">
                       <li className="flex justify-between">
                         <span>Total Throws:</span>
-                        <span className="font-medium">{stats.totalThrows}</span>
+                        <span className="font-medium text-white">{stats.totalThrows}</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Highest Scoring Throw:</span>
-                        <span className="font-medium">{stats.highestScoreThrow}</span>
+                        <span className="font-medium text-white">{stats.highestScoreThrow}</span>
                       </li>
                     </ul>
                   </div>
@@ -184,20 +184,20 @@ export default function StatsPage() {
       )}
       
       {/* Recent Games */}
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
-        <h2 className="text-xl font-semibold p-4 bg-gray-100">
+      <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700">
+        <h2 className="text-xl font-semibold p-4 bg-gray-800 text-white">
           {selectedPlayer === "all" ? "Recent Games" : "Recent Games for " + getPlayerName(selectedPlayer)}
         </h2>
         
         {latestGames.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">
+          <div className="p-8 text-center text-gray-300">
             No games found
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left">
+            <table className="w-full text-left text-white">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-800">
                   <th className="p-4 font-medium">Date</th>
                   <th className="p-4 font-medium">Players</th>
                   <th className="p-4 font-medium">Starting Score</th>
@@ -205,13 +205,13 @@ export default function StatsPage() {
                   <th className="p-4 font-medium"></th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-700">
                 {latestGames.map((game: Game) => {
                   const durationMs = (game.endedAt || 0) - game.createdAt;
                   const durationMin = Math.floor(durationMs / 60000);
                   
                   return (
-                    <tr key={game.id} className="hover:bg-gray-50">
+                    <tr key={game.id} className="hover:bg-gray-800">
                       <td className="p-4">{formatDate(game.createdAt)}</td>
                       <td className="p-4">
                         {game.playerIds.map(id => getPlayerName(id)).join(", ")}

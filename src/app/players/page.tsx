@@ -31,7 +31,7 @@ function EditPlayerForm({
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex-1 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label="Edit player name"
       />
       <button
@@ -43,7 +43,7 @@ function EditPlayerForm({
       <button
         type="button"
         onClick={onCancel}
-        className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors"
+        className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors"
       >
         Cancel
       </button>
@@ -82,15 +82,15 @@ export default function PlayersPage() {
       <h1 className="text-3xl font-bold mb-6">Player Management</h1>
       
       {/* Add Player Form */}
-      <form onSubmit={handleAddPlayer} className="mb-8 p-4 bg-gray-100 rounded-lg">
-        <h2 className="text-xl font-semibold mb-4">Add New Player</h2>
+      <form onSubmit={handleAddPlayer} className="mb-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
+        <h2 className="text-xl font-semibold mb-4 text-white">Add New Player</h2>
         <div className="flex gap-2">
           <input
             type="text"
             value={newPlayerName}
             onChange={(e) => setNewPlayerName(e.target.value)}
             placeholder="Enter player name"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-300"
           />
           <button
             type="submit"
@@ -102,13 +102,13 @@ export default function PlayersPage() {
       </form>
       
       {/* Player List */}
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
-        <h2 className="text-xl font-semibold p-4 bg-gray-100">Players</h2>
+      <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700">
+        <h2 className="text-xl font-semibold p-4 bg-gray-800 text-white">Players</h2>
         
         {players.length === 0 ? (
-          <p className="p-4 text-gray-500 text-center">No players added yet. Add a player to get started.</p>
+          <p className="p-4 text-gray-300 text-center">No players added yet. Add a player to get started.</p>
         ) : (
-          <ul className="divide-y divide-gray-200">
+          <ul className="divide-y divide-gray-700">
             {players.map((player) => (
               <li key={player.id} className="p-4 flex items-center justify-between">
                 {editingPlayerId === player.id ? (
@@ -119,18 +119,18 @@ export default function PlayersPage() {
                   />
                 ) : (
                   <>
-                    <span className="font-medium">{player.name}</span>
+                    <span className="font-medium text-white">{player.name}</span>
                     <div className="flex gap-2">
                       <button
                         onClick={() => setEditingPlayerId(player.id)}
-                        className="p-2 text-blue-600 hover:text-blue-800 transition-colors"
+                        className="p-2 text-blue-400 hover:text-blue-300 transition-colors"
                         aria-label="Edit player"
                       >
                         <FaEdit />
                       </button>
                       <button
                         onClick={() => removePlayer(player.id)}
-                        className="p-2 text-red-600 hover:text-red-800 transition-colors"
+                        className="p-2 text-red-400 hover:text-red-300 transition-colors"
                         aria-label="Delete player"
                       >
                         <FaTrash />
