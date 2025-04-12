@@ -36,8 +36,8 @@ function Home() {
         className: "flex flex-col items-center justify-center min-h-[calc(100vh-120px)]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-4xl font-bold mb-8 text-center",
-                children: "Welcome to Dart Tracker"
+                className: "text-4xl font-bold mb-8 text-center text-white",
+                children: "Välkommen till Dart Tracker"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
                 lineNumber: 7,
@@ -59,7 +59,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-xl font-semibold mb-2",
-                                children: "Start New Game"
+                                children: "Starta Nytt Spel"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 15,
@@ -67,7 +67,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-center",
-                                children: "Set up and play a new dart game"
+                                children: "Starta och spela ett nytt dartspel"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 16,
@@ -92,7 +92,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-xl font-semibold mb-2",
-                                children: "Manage Players"
+                                children: "Hantera Spelare"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 24,
@@ -100,7 +100,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-center",
-                                children: "Add, edit, or remove players"
+                                children: "Lägg till, redigera eller ta bort spelare"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 25,
@@ -125,7 +125,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-xl font-semibold mb-2",
-                                children: "View Statistics"
+                                children: "Visa Statistik"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 33,
@@ -133,7 +133,7 @@ function Home() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-center",
-                                children: "Check game history and player stats"
+                                children: "Kontrollera spelhistorik och spelarstatistik"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 34,

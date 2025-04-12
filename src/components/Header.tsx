@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-gray-800 text-white py-4 border-b border-gray-700">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link href="/" className="text-xl font-bold">Dart Scorer</Link>
         
@@ -20,25 +20,25 @@ export default function Header() {
             href="/" 
             className={`hover:text-blue-300 transition-colors ${isActive('/') ? 'text-blue-400' : ''}`}
           >
-            Home
+            Hem
           </Link>
           <Link 
             href="/players" 
             className={`hover:text-blue-300 transition-colors ${isActive('/players') ? 'text-blue-400' : ''}`}
           >
-            Players
+            Spelare
           </Link>
           <Link 
             href="/game" 
             className={`hover:text-blue-300 transition-colors ${isActive('/game') ? 'text-blue-400' : ''}`}
           >
-            Games
+            Spel
           </Link>
           <Link 
             href="/stats" 
             className={`hover:text-blue-300 transition-colors ${isActive('/stats') ? 'text-blue-400' : ''}`}
           >
-            Stats
+            Statistik
           </Link>
         </nav>
       </div>

@@ -765,6 +765,11 @@
     border-width: 1px;
   }
 
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+
   .border-blue-200 {
     border-color: var(--color-blue-200);
   }
@@ -1201,12 +1206,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-gray-400:hover {
-      background-color: var(--color-gray-400);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-gray-600:hover {
       background-color: var(--color-gray-600);
     }
@@ -1255,12 +1254,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:text-blue-800:hover {
-      color: var(--color-blue-800);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:text-red-300:hover {
       color: var(--color-red-300);
     }
@@ -1269,12 +1262,6 @@
   @media (hover: hover) {
     .hover\:text-red-700:hover {
       color: var(--color-red-700);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:text-red-800:hover {
-      color: var(--color-red-800);
     }
   }
 
@@ -1330,8 +1317,8 @@
 }
 
 :root {
-  --background: #fff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1342,9 +1329,60 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-black {
+  background-color: #0a0a0a !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+a {
+  color: #3b82f6;
+}
+
+input, select, textarea {
+  border-radius: .25rem;
+  padding: .5rem;
+  color: #fff !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #4b5563 !important;
+}
+
+input::placeholder {
+  color: #9ca3af !important;
+}
+
+label {
+  color: #fff !important;
+}
+
+tr, td, th {
+  border-color: #4b5563 !important;
+}
+
+button, table {
+  color: #fff !important;
+}
+
+.bg-gray-900, .bg-gray-800, .bg-gray-700 {
+  background-color: #111827 !important;
+}
+
+p {
+  color: #e5e7eb !important;
 }
 
 @property --tw-rotate-x {

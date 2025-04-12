@@ -23,7 +23,7 @@ function Header() {
         return pathname === path;
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "bg-gray-800 text-white py-4",
+        className: "bg-gray-800 text-white py-4 border-b border-gray-700",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto flex justify-between items-center px-4",
             children: [
@@ -42,7 +42,7 @@ function Header() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/",
                             className: `hover:text-blue-300 transition-colors ${isActive('/') ? 'text-blue-400' : ''}`,
-                            children: "Home"
+                            children: "Hem"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
                             lineNumber: 19,
@@ -51,7 +51,7 @@ function Header() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/players",
                             className: `hover:text-blue-300 transition-colors ${isActive('/players') ? 'text-blue-400' : ''}`,
-                            children: "Players"
+                            children: "Spelare"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
                             lineNumber: 25,
@@ -60,7 +60,7 @@ function Header() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/game",
                             className: `hover:text-blue-300 transition-colors ${isActive('/game') ? 'text-blue-400' : ''}`,
-                            children: "Games"
+                            children: "Spel"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
                             lineNumber: 31,
@@ -69,7 +69,7 @@ function Header() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/stats",
                             className: `hover:text-blue-300 transition-colors ${isActive('/stats') ? 'text-blue-400' : ''}`,
-                            children: "Stats"
+                            children: "Statistik"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
                             lineNumber: 37,
