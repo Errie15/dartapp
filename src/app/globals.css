@@ -1358,3 +1358,103 @@ input:checked + .toggle-slider:before {
     flex: 1;
   }
 }
+
+/* Dartboard Grid Layout */
+.dartboard-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.dartboard-number-btn {
+  background-color: var(--black-charcoal);
+  color: var(--cream);
+  border: 1px solid var(--gray-800);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.3rem;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.dartboard-number-btn:active {
+  transform: scale(0.95);
+  background-color: var(--black-smoke);
+}
+
+.dartboard-number-btn.active {
+  border: 2px solid var(--accent-primary);
+  background-color: rgba(220, 20, 60, 0.15);
+}
+
+/* Mobile media queries for dartboard grid */
+@media (max-width: 480px) {
+  .dartboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .dartboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .dartboard-number-btn {
+    font-size: 0.85rem;
+    padding: 0.2rem;
+    min-height: 36px;
+  }
+}
+
+/* Mini control for score type */
+.segmented-control-mini {
+  display: flex;
+  background-color: var(--black-charcoal);
+  border-radius: var(--border-radius-md);
+  padding: 0.15rem;
+}
+
+.segmented-control-option-mini {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.segmented-control-option-mini.active {
+  background-color: var(--accent-primary);
+  color: var(--cream);
+}
+
+/* Special buttons for bullseye/miss */
+.special-btn {
+  background-color: var(--black-charcoal);
+  color: var(--cream);
+  border: 1px solid var(--gray-800);
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.3rem;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.special-btn:active {
+  transform: scale(0.95);
+  background-color: var(--black-smoke);
+}

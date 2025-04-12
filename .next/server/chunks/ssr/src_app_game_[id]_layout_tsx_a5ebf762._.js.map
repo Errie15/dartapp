@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/erikh/OneDrive/Desktop/dartapp/src/app/game/%5Bid%5D/layout.tsx"],"sourcesContent":["export const dynamic = 'force-dynamic';\r\nexport const revalidate = 0;\r\n\r\nexport default function GameLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return (\r\n    <>\r\n      {children}\r\n    </>\r\n  );\r\n} "],"names":[],"mappings":";;;;;;;AAAO,MAAM,UAAU;AAChB,MAAM,aAAa;AAEX,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE;kBACG;;AAGP","debugId":null}}]
+}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaBackspace, FaCheck, FaBullseye } from "react-icons/fa";
 import { ScoreType } from "@/types";
 
 interface MobileScoreInputProps {
@@ -17,60 +16,15 @@ export default function MobileScoreInput({
   maxThrows = 3,
   currentThrows = 0
 }: MobileScoreInputProps) {
-  const [inputValue, setInputValue] = useState<string>("");
   const [scoreType, setScoreType] = useState<ScoreType>("single");
-  const [showQuickScores, setShowQuickScores] = useState<boolean>(true);
   
   const remainingThrows = maxThrows - currentThrows;
-  const canSubmit = !disabled && remainingThrows > 0 && inputValue !== "";
   
   // Reset input when currentThrows changes (new player turn)
   useEffect(() => {
-    setInputValue("");
+    // Ta bort utsättning av inputValue eftersom vi inte längre använder det
+    // setInputValue("");
   }, [currentThrows]);
-  
-  const handleNumberInput = (num: number) => {
-    if (disabled || remainingThrows === 0) return;
-    
-    // Prevent leading zeros
-    if (inputValue === "0") {
-      setInputValue(num.toString());
-      return;
-    }
-    
-    // Limit to 1-20 and 25 (outer bull) for standard dart scores 
-    const newValue = inputValue + num;
-    const numericValue = parseInt(newValue);
-    
-    if (numericValue > 20 && numericValue !== 25) {
-      return;
-    }
-    
-    setInputValue(newValue);
-  };
-  
-  const handleClear = () => {
-    setInputValue("");
-  };
-  
-  const handleBackspace = () => {
-    setInputValue(prev => prev.slice(0, -1));
-  };
-  
-  const handleSubmit = () => {
-    if (!canSubmit) return;
-    
-    const value = parseInt(inputValue);
-    
-    if (isNaN(value)) {
-      setInputValue("");
-      return;
-    }
-    
-    onScoreSubmit(value, scoreType);
-    setInputValue("");
-    setScoreType("single");
-  };
   
   const handleTypeSelect = (type: ScoreType) => {
     setScoreType(type);
@@ -80,192 +34,86 @@ export default function MobileScoreInput({
     if (disabled || remainingThrows === 0) return;
     onScoreSubmit(value, type);
   };
-  
-  // Optimized organization of quick scores for 6-column grid
-  const quickScores = [
-    // Singles (första raden)
-    { value: 20, type: "single" as ScoreType },
-    { value: 19, type: "single" as ScoreType },
-    { value: 18, type: "single" as ScoreType },
-    { value: 17, type: "single" as ScoreType },
-    { value: 16, type: "single" as ScoreType },
-    { value: 15, type: "single" as ScoreType },
-    // Doubles (andra raden)
-    { value: 20, type: "double" as ScoreType },
-    { value: 19, type: "double" as ScoreType },
-    { value: 18, type: "double" as ScoreType },
-    { value: 17, type: "double" as ScoreType },
-    { value: 16, type: "double" as ScoreType },
-    { value: 15, type: "double" as ScoreType },
-    // Triples (tredje raden)
-    { value: 20, type: "triple" as ScoreType },
-    { value: 19, type: "triple" as ScoreType },
-    { value: 18, type: "triple" as ScoreType },
-    { value: 17, type: "triple" as ScoreType },
-    { value: 16, type: "triple" as ScoreType },
-    { value: 15, type: "triple" as ScoreType },
-    // Specialpoäng
-    { value: 0, type: "single" as ScoreType }, // Miss
-    { value: 25, type: "outerBull" as ScoreType }, // Outer bull
-    { value: 50, type: "innerBull" as ScoreType }, // Bullseye
+
+  // Direktval för dartboardnummer
+  const dartboardNumbers = [
+    20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5
   ];
   
-  const getScoreTypeLabel = (type: ScoreType) => {
-    switch (type) {
-      case "single": return "Singel";
-      case "double": return "Dubbel";
-      case "triple": return "Trippel";
-      case "innerBull": return "Bullseye";
-      case "outerBull": return "Yttre bulls";
-      default: return type;
-    }
-  };
-  
   return (
-    <div className="mb-8">
-      {/* Flex container for the main layout */}
-      <div className="flex flex-col">
-        {/* Top area with throw counter and mode toggle */}
-        <div className="flex justify-between items-center mb-2">
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-400">Kast kvar: </span>
-            <span className={`font-bold ${remainingThrows > 0 ? "text-accent-primary" : "text-gray-500"}`}>
-              {remainingThrows} / {maxThrows}
-            </span>
-          </div>
-          
-          <button 
-            className="text-sm px-3 py-1 rounded-full bg-black-charcoal text-cream"
-            onClick={() => setShowQuickScores(!showQuickScores)}
-          >
-            {showQuickScores ? "Visa siffror" : "Visa snabbval"}
-          </button>
-        </div>
-        
-        {/* Score display when using number pad */}
-        {!showQuickScores && (
-          <div className="text-sm text-center mb-2">
-            <span className="text-gray-400">Poäng: </span>
-            <span className="font-bold text-accent-primary text-lg">
-              {inputValue ? parseInt(inputValue) * (scoreType === "single" ? 1 : scoreType === "double" ? 2 : 3) : 0}
-            </span>
-          </div>
-        )}
-        
-        {/* Score type selector - more compact */}
-        <div className="segmented-control mb-2">
-          {(["single", "double", "triple"] as ScoreType[]).map((type) => (
-            <div 
-              key={type}
-              className={`segmented-control-option ${scoreType === type ? 'active' : ''}`}
-              onClick={() => handleTypeSelect(type)}
-            >
-              {getScoreTypeLabel(type)}
-            </div>
-          ))}
-        </div>
-        
-        {showQuickScores ? (
-          /* Quick score buttons in an organized grid format */
-          <div className="quick-score-grid mb-3">
-            {quickScores.map((score, index) => {
-              let label = "";
-              let scoreValue = 0;
-              
-              if (score.value === 0) {
-                label = "Miss";
-                scoreValue = 0;
-              } else if (score.type === "innerBull") {
-                label = "Bull";
-                scoreValue = 50;
-              } else if (score.type === "outerBull") {
-                label = "25";
-                scoreValue = 25;
-              } else {
-                label = `${score.type === "single" ? "" : score.type === "double" ? "D" : "T"}${score.value}`;
-                scoreValue = score.value * (score.type === "single" ? 1 : score.type === "double" ? 2 : 3);
-              }
-              
-              return (
-                <button
-                  key={index}
-                  className={`quick-score-btn ${score.type !== "single" ? score.type === "double" ? "border-red-crimson" : "border-gold-accent" : ""}`}
-                  onClick={() => handleQuickScore(score.value, score.type)}
-                  disabled={disabled || remainingThrows === 0}
-                >
-                  <div className="flex flex-col items-center">
-                    <span>{label}</span>
-                    {score.value > 0 && <span className="text-xs opacity-80">{scoreValue}</span>}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        ) : (
-          /* Number pad in a more compact format */
-          <div className="flex flex-col mb-3">
-            <div className="number-pad-display">
-              {inputValue || "0"}
-            </div>
-            
-            <div className="compact-number-pad">
-              <button className="number-pad-btn" onClick={() => handleNumberInput(1)}>1</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(2)}>2</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(3)}>3</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(4)}>4</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(5)}>5</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(6)}>6</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(7)}>7</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(8)}>8</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(9)}>9</button>
-              <button className="number-pad-btn" onClick={handleClear}>C</button>
-              <button className="number-pad-btn" onClick={() => handleNumberInput(0)}>0</button>
-              <button className="number-pad-btn" onClick={handleBackspace}>
-                <FaBackspace />
-              </button>
-            </div>
-            
-            <div className="flex mt-2 gap-2">
-              <button 
-                className="flex-1 number-pad-btn special"
-                onClick={() => handleQuickScore(0, "single")}
-                disabled={disabled || remainingThrows === 0}
-              >
-                Miss
-              </button>
-              <button 
-                className="flex-1 number-pad-btn special"
-                onClick={() => handleQuickScore(25, "outerBull")}
-                disabled={disabled || remainingThrows === 0}
-              >
-                25
-              </button>
-              <button 
-                className="flex-1 number-pad-btn special"
-                onClick={() => handleQuickScore(50, "innerBull")}
-                disabled={disabled || remainingThrows === 0}
-              >
-                <FaBullseye />
-              </button>
-            </div>
-          </div>
-        )}
-        
-        {/* Submit button - always visible in number pad mode */}
-        {!showQuickScores ? (
+    <div className="mb-4">
+      {/* TEST COMPONENT */}
+      <div className="p-2 bg-accent-primary text-cream text-center mb-2">
+        DETTA ÄR NYA KOMPONENTEN
+      </div>
+      
+      {/* Dartboardnummer i rutnät */}
+      <div className="dartboard-grid mb-3">
+        {dartboardNumbers.map((num) => (
           <button
-            onClick={handleSubmit}
-            disabled={!canSubmit}
-            className={`w-full py-2 rounded-md ${
-              !canSubmit
-                ? "bg-gray-700 cursor-not-allowed opacity-50"
-                : "bg-accent-primary"
-            } text-cream transition-colors font-semibold text-lg flex items-center justify-center gap-2`}
+            key={`dart-${num}`}
+            className="dartboard-number-btn"
+            onClick={() => handleQuickScore(num, scoreType)}
+            disabled={disabled || remainingThrows === 0}
           >
-            <FaCheck className="text-sm" />
-            <span>Registrera poäng ({inputValue ? parseInt(inputValue) * (scoreType === "single" ? 1 : scoreType === "double" ? 2 : 3) : 0})</span>
+            {num}
           </button>
-        ) : null}
+        ))}
+      </div>
+      
+      {/* Knappar för multiplier */}
+      <div className="flex justify-between mb-2">
+        <button 
+          className={`flex-1 special-btn mr-2 ${scoreType === "single" ? "bg-accent-primary" : ""}`}
+          onClick={() => handleTypeSelect("single")}
+        >
+          Singel
+        </button>
+        <button 
+          className={`flex-1 special-btn mr-2 ${scoreType === "double" ? "bg-accent-primary" : ""}`}
+          onClick={() => handleTypeSelect("double")}
+        >
+          Dubbel
+        </button>
+        <button 
+          className={`flex-1 special-btn ${scoreType === "triple" ? "bg-accent-primary" : ""}`}
+          onClick={() => handleTypeSelect("triple")}
+        >
+          Trippel
+        </button>
+      </div>
+      
+      {/* Specialknappar */}
+      <div className="flex mt-2 gap-2 mb-2">
+        <button 
+          className="flex-1 special-btn"
+          onClick={() => handleQuickScore(0, "single")}
+          disabled={disabled || remainingThrows === 0}
+        >
+          Miss
+        </button>
+        <button 
+          className="flex-1 special-btn"
+          onClick={() => handleQuickScore(25, "outerBull")}
+          disabled={disabled || remainingThrows === 0}
+        >
+          25
+        </button>
+        <button 
+          className="flex-1 special-btn"
+          onClick={() => handleQuickScore(50, "innerBull")}
+          disabled={disabled || remainingThrows === 0}
+        >
+          Bull
+        </button>
+      </div>
+      
+      {/* Kast kvar */}
+      <div className="text-center text-sm mb-2">
+        <span className="text-gray-400">Kast kvar: </span>
+        <span className={`font-bold ${remainingThrows > 0 ? "text-accent-primary" : "text-gray-500"}`}>
+          {remainingThrows} / {maxThrows}
+        </span>
       </div>
     </div>
   );

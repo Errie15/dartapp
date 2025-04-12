@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import useGameStore from "@/store/gameStore";
 import { ScoreType } from "@/types";
+import DartboardCompactInput from "@/components/DartboardCompactInput";
 
 export default function GamePage() {
   const router = useRouter();
@@ -102,11 +103,6 @@ export default function GamePage() {
     setScoreType("single");
     setThrows([]);
   };
-  
-  const dartboardNumbers = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-  ];
   
   const calculateScoreValue = (type: ScoreType, value: number) => {
     if (type === "double") return value * 2;
@@ -207,102 +203,16 @@ export default function GamePage() {
             </h2>
             
             <div className="p-4">
-              <div className="space-y-6">
-                {/* Score Type Selector */}
-                <div>
-                  <h3 className="font-medium mb-2">Score Type</h3>
-                  <div className="flex gap-2 flex-wrap">
-                    {(["single", "double", "triple"] as ScoreType[]).map((type) => (
-                      <button
-                        key={type}
-                        onClick={() => setScoreType(type)}
-                        className={`px-4 py-2 rounded-md ${
-                          scoreType === type
-                            ? "bg-blue-600 text-white"
-                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                        } transition-colors`}
-                      >
-                        {type.charAt(0).toUpperCase() + type.slice(1)}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Special Buttons */}
-                <div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <button
-                      onClick={() => handleBullClick(true)}
-                      disabled={!activePlayerId || throws.length >= 3}
-                      className={`p-3 rounded-md ${
-                        !activePlayerId || throws.length >= 3
-                          ? "bg-gray-300 cursor-not-allowed"
-                          : "bg-yellow-500 hover:bg-yellow-600 text-white"
-                      } transition-colors font-medium`}
-                    >
-                      Bullseye (50)
-                    </button>
-                    <button
-                      onClick={() => handleBullClick(false)}
-                      disabled={!activePlayerId || throws.length >= 3}
-                      className={`p-3 rounded-md ${
-                        !activePlayerId || throws.length >= 3
-                          ? "bg-gray-300 cursor-not-allowed"
-                          : "bg-green-500 hover:bg-green-600 text-white"
-                      } transition-colors font-medium`}
-                    >
-                      Outer Bull (25)
-                    </button>
-                    <button
-                      onClick={handleMissClick}
-                      disabled={!activePlayerId || throws.length >= 3}
-                      className={`p-3 rounded-md ${
-                        !activePlayerId || throws.length >= 3
-                          ? "bg-gray-300 cursor-not-allowed"
-                          : "bg-red-500 hover:bg-red-600 text-white"
-                      } transition-colors font-medium`}
-                    >
-                      Miss (0)
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Dartboard Numbers */}
-                <div>
-                  <h3 className="font-medium mb-2">Dartboard Numbers</h3>
-                  <div className="grid grid-cols-5 gap-2">
-                    {dartboardNumbers.map(number => (
-                      <button
-                        key={number}
-                        onClick={() => handleNumberClick(number)}
-                        disabled={!activePlayerId || throws.length >= 3}
-                        className={`p-3 rounded-md ${
-                          !activePlayerId || throws.length >= 3
-                            ? "bg-gray-300 cursor-not-allowed"
-                            : "bg-blue-500 hover:bg-blue-600 text-white"
-                        } transition-colors font-medium`}
-                      >
-                        {number}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Submit Score Button */}
-                <div className="pt-4">
-                  <button
-                    onClick={handleScoreSubmit}
-                    disabled={!activePlayerId || throws.length === 0}
-                    className={`w-full py-3 rounded-md ${
-                      !activePlayerId || throws.length === 0
-                        ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-green-600 hover:bg-green-700"
-                    } text-white transition-colors font-semibold text-lg`}
-                  >
-                    Submit Score
-                  </button>
-                </div>
-              </div>
+              <DartboardCompactInput 
+                onNumberClick={handleNumberClick}
+                onBullClick={handleBullClick}
+                onMissClick={handleMissClick}
+                onScoreSubmit={handleScoreSubmit}
+                scoreType={scoreType}
+                setScoreType={setScoreType}
+                throwCount={throws.length}
+                disabled={!activePlayerId || throws.length >= 3}
+              />
             </div>
           </div>
         </div>
