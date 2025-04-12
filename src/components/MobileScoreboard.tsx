@@ -1,6 +1,6 @@
 "use client";
 
-import { Player, Score } from "@/types";
+import { Player } from "@/types";
 import { FaTrophy, FaArrowDown, FaCircle } from "react-icons/fa";
 
 interface MobileScoreboardProps {

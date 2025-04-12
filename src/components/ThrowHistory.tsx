@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Score, ScoreType } from '@/types';
+import { Score } from '@/types';
 import { FaTrash, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface ThrowHistoryProps {
