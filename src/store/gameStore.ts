@@ -25,6 +25,9 @@ interface GameState {
   
   // Stats
   getPlayerAverageScore: (playerId: string, gameId?: string) => number;
+  
+  // Check for valid dart throw (not bust)
+  checkValidThrow: (playerId: string, value: number, type: ScoreType, gameId?: string) => { valid: boolean, message?: string };
 }
 
 const useGameStore = create<GameState>()(
@@ -97,12 +100,58 @@ const useGameStore = create<GameState>()(
         return get().currentGame;
       },
       
+      // Kontrollera om ett kast är giltigt enligt dartreglerna
+      checkValidThrow: (playerId: string, value: number, type: ScoreType, gameId?: string) => {
+        const { games, currentGame } = get();
+        const targetGameId = gameId || currentGame?.id;
+        
+        if (!targetGameId) return { valid: false, message: "Inget aktivt spel" };
+        
+        const game = games.find((g) => g.id === targetGameId);
+        if (!game) return { valid: false, message: "Spelet hittades inte" };
+        
+        // Beräkna nuvarande poäng
+        const currentScore = get().getPlayerRemainingScore(playerId, targetGameId);
+        
+        // Beräkna värdet av kastet
+        let throwValue = value;
+        if (type === 'double') throwValue *= 2;
+        if (type === 'triple') throwValue *= 3;
+        
+        // Beräkna den nya poängen efter kastet
+        const newScore = currentScore - throwValue;
+        
+        // Kontrollera om kastet leder till "bust" (poäng under 0 eller exakt 1)
+        if (newScore < 0) {
+          return { valid: false, message: "Bust! Poängen blev under 0." };
+        }
+        
+        if (newScore === 1) {
+          return { valid: false, message: "Bust! Poängen blev exakt 1." };
+        }
+        
+        // Kontrollera om det är en giltig checkout (om poängen blir 0)
+        if (newScore === 0 && type !== 'double' && type !== 'innerBull') {
+          return { valid: false, message: "Ogiltigt! Checkout måste ske på en dubbel." };
+        }
+        
+        return { valid: true };
+      },
+      
       // Score actions
       addScore: (playerId: string, value: number, type: ScoreType) => {
         const { currentGame } = get();
         
         if (!currentGame) {
           console.error('No active game');
+          return;
+        }
+        
+        // Kontrollera om kastet är giltigt enligt dartreglerna
+        const validity = get().checkValidThrow(playerId, value, type, currentGame.id);
+        
+        if (!validity.valid) {
+          console.warn('Ogiltigt kast:', validity.message);
           return;
         }
         

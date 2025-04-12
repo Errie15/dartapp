@@ -48,7 +48,7 @@ export default function DartboardCompactInput({
                     : "bg-gray-700 text-gray-300"
                 }`}
               >
-                {type === "single" ? "S" : type === "double" ? "D" : "T"}
+                {type === "single" ? "E" : type === "double" ? "D" : "T"}
               </button>
             ))}
           </div>
@@ -100,9 +100,9 @@ export default function DartboardCompactInput({
         {/* Submit Button */}
         <button
           onClick={onScoreSubmit}
-          disabled={disabled || throwCount === 0}
+          disabled={(disabled && throwCount < 3) || throwCount === 0}
           className={`w-full py-1 rounded-sm ${
-            disabled || throwCount === 0
+            (disabled && throwCount < 3) || throwCount === 0
               ? "bg-gray-600 text-gray-400"
               : "bg-red-600 text-white"
           } font-medium text-xs`}
