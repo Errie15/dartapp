@@ -151,6 +151,14 @@
   width: 100%;
 }
 
+.max-w-\[60px\] {
+  max-width: 60px;
+}
+
+.max-w-\[80px\] {
+  max-width: 80px;
+}
+
 .flex-1 {
   flex: 1;
 }
