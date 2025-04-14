@@ -35,11 +35,6 @@ export default function MobileScoreInput({
     onScoreSubmit(value, type);
   };
 
-  // Direktval för dartboardnummer
-  const dartboardNumbers = [
-    20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5
-  ];
-  
   return (
     <div className="mb-4">
       {/* TEST COMPONENT */}
@@ -47,72 +42,77 @@ export default function MobileScoreInput({
         DETTA ÄR NYA KOMPONENTEN
       </div>
       
-      {/* Dartboardnummer i rutnät */}
-      <div className="dartboard-grid mb-3">
-        {dartboardNumbers.map((num) => (
-          <button
-            key={`dart-${num}`}
-            className="dartboard-number-btn"
-            onClick={() => handleQuickScore(num, scoreType)}
-            disabled={disabled || remainingThrows === 0}
-          >
-            {num}
-          </button>
-        ))}
-      </div>
-      
-      {/* Knappar för multiplier */}
-      <div className="flex justify-between mb-2">
+      {/* Score Type and Special Buttons Grid */}
+      <div className="grid grid-cols-3 gap-1 mb-1">
         <button 
-          className={`flex-1 special-btn mr-2 ${scoreType === "single" ? "bg-accent-primary" : ""}`}
+          className={`h-10 rounded text-white text-sm font-medium flex items-center justify-center ${
+            scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"
+          } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("single")}
         >
-          Singel
+          E
         </button>
         <button 
-          className={`flex-1 special-btn mr-2 ${scoreType === "double" ? "bg-accent-primary" : ""}`}
+          className={`h-10 rounded text-white text-sm font-medium flex items-center justify-center ${
+            scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"
+          } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("double")}
         >
-          Dubbel
+          D
         </button>
         <button 
-          className={`flex-1 special-btn ${scoreType === "triple" ? "bg-accent-primary" : ""}`}
+          className={`h-10 rounded text-white text-sm font-medium flex items-center justify-center ${
+            scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"
+          } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("triple")}
         >
-          Trippel
+          T
         </button>
       </div>
-      
-      {/* Specialknappar */}
-      <div className="flex mt-2 gap-2 mb-2">
+
+      <div className="grid grid-cols-3 gap-1 mb-1">
         <button 
-          className="flex-1 special-btn"
-          onClick={() => handleQuickScore(0, "single")}
-          disabled={disabled || remainingThrows === 0}
-        >
-          Miss
-        </button>
-        <button 
-          className="flex-1 special-btn"
+          className="h-10 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
           onClick={() => handleQuickScore(25, "outerBull")}
           disabled={disabled || remainingThrows === 0}
         >
           25
         </button>
         <button 
-          className="flex-1 special-btn"
+          className="h-10 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
           onClick={() => handleQuickScore(50, "innerBull")}
           disabled={disabled || remainingThrows === 0}
         >
-          Bull
+          B
+        </button>
+        <button 
+          className="h-10 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
+          onClick={() => handleQuickScore(0, "single")}
+          disabled={disabled || remainingThrows === 0}
+        >
+          MISS
         </button>
       </div>
-      
-      {/* Kast kvar */}
-      <div className="text-center text-sm mb-2">
-        <span className="text-gray-400">Kast kvar: </span>
+
+      {/* Numbers Grid */}
+      <div className="grid grid-cols-5 gap-1">
+        {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((num) => (
+          <button
+            key={num}
+            onClick={() => handleQuickScore(num, scoreType)}
+            disabled={disabled || remainingThrows === 0}
+            className="h-10 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {num}
+          </button>
+        ))}
+      </div>
+
+      {/* Throws Counter */}
+      <div className="mt-1 text-center text-sm">
+        <span className="text-gray-400">Kast: </span>
         <span className={`font-bold ${remainingThrows > 0 ? "text-accent-primary" : "text-gray-500"}`}>
-          {remainingThrows} / {maxThrows}
+          {currentThrows} / {maxThrows}
         </span>
       </div>
     </div>
