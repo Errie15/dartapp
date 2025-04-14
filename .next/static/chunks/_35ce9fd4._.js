@@ -236,11 +236,11 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-6 gap-2 mb-4",
+                className: "grid grid-cols-6 gap-1 md:gap-2 mb-2 md:mb-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("single"),
-                        className: `p-2 rounded text-white text-sm font-medium ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-3 md:p-2 rounded text-white text-sm font-medium ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "E"
                     }, void 0, false, {
@@ -250,7 +250,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("double"),
-                        className: `p-2 rounded text-white text-sm font-medium ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-3 md:p-2 rounded text-white text-sm font-medium ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "D"
                     }, void 0, false, {
@@ -260,7 +260,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("triple"),
-                        className: `p-2 rounded text-white text-sm font-medium ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-3 md:p-2 rounded text-white text-sm font-medium ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "T"
                     }, void 0, false, {
@@ -270,7 +270,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(true),
-                        className: "p-2 rounded bg-black-charcoal text-white text-sm font-medium",
+                        className: "py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium",
                         disabled: disabled || throwCount >= 3,
                         children: "B"
                     }, void 0, false, {
@@ -280,7 +280,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(false),
-                        className: "p-2 rounded bg-black-charcoal text-white text-sm font-medium",
+                        className: "py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium",
                         disabled: disabled || throwCount >= 3,
                         children: "25"
                     }, void 0, false, {
@@ -290,7 +290,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: onMissClick,
-                        className: "p-2 rounded bg-black-charcoal text-white text-sm font-medium",
+                        className: "py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium",
                         disabled: disabled || throwCount >= 3,
                         children: "MISS"
                     }, void 0, false, {
@@ -305,7 +305,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-7 gap-2 mb-4",
+                className: "grid grid-cols-5 md:grid-cols-7 gap-1 md:gap-2 mb-2 md:mb-4",
                 children: [
                     1,
                     2,
@@ -330,7 +330,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                 ].map((num)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onNumberClick(num),
                         disabled: disabled || throwCount >= 3,
-                        className: "p-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
+                        className: "py-3 md:p-2 rounded bg-black-charcoal text-white text-base md:text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
                         children: num
                     }, num, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
@@ -345,7 +345,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: onScoreSubmit,
                 disabled: disabled || throwCount === 0,
-                className: `w-full p-3 rounded text-center text-sm font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
+                className: `w-full py-4 md:p-3 rounded text-center text-sm font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
                 children: [
                     "REGISTRERA (",
                     throwCount,
@@ -944,17 +944,17 @@ function GamePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-gray-900 text-white",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "container mx-auto p-4",
+            className: "container mx-auto p-2 md:p-4 max-w-2xl",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between mb-4",
+                    className: "flex items-center justify-between mb-4 px-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex items-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>router.push('/game'),
-                                    className: "text-red-500 hover:text-red-400",
+                                    className: "text-red-500 hover:text-red-400 text-2xl",
                                     children: "≡"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -962,7 +962,7 @@ function GamePage() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "text-2xl font-bold ml-4",
+                                    className: "text-xl md:text-2xl font-bold ml-4",
                                     children: "Dart Scorer"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -982,7 +982,7 @@ function GamePage() {
                                     router.push(`/game/${id}/summary`);
                                 }
                             },
-                            className: "bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm",
+                            className: "bg-red-600 hover:bg-red-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm",
                             children: "Avsluta spel"
                         }, void 0, false, {
                             fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -996,7 +996,7 @@ function GamePage() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    className: "text-4xl font-serif mb-8",
+                    className: "text-2xl md:text-4xl font-serif mb-4 md:mb-8 px-2",
                     children: "Pågående spel"
                 }, void 0, false, {
                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1004,13 +1004,13 @@ function GamePage() {
                     columnNumber: 9
                 }, this),
                 activePlayerId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gray-800 rounded-lg p-6 mb-6",
+                    className: "bg-gray-800 rounded-lg p-3 md:p-6 mb-4 md:mb-6 mx-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mb-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-3xl font-bold",
+                                    className: "text-2xl md:text-3xl font-bold",
                                     children: getPlayer(activePlayerId)?.name
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1018,7 +1018,7 @@ function GamePage() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-xl mt-2",
+                                    className: "text-lg md:text-xl mt-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "mr-2",
@@ -1046,7 +1046,7 @@ function GamePage() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-gray-400",
+                                    className: "text-gray-400 text-sm",
                                     children: "Aktuell spelare"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1062,7 +1062,7 @@ function GamePage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mb-4",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-gray-700 rounded p-4",
+                                className: "bg-gray-700 rounded p-3 md:p-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-sm text-gray-400 mb-2",
@@ -1077,7 +1077,7 @@ function GamePage() {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-3 gap-4",
+                                        className: "grid grid-cols-3 gap-2 md:gap-4",
                                         children: [
                                             0,
                                             1,
@@ -1089,7 +1089,7 @@ function GamePage() {
                                                 children: throwItem ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-sm",
+                                                            className: "text-xs md:text-sm",
                                                             children: renderThrowLabel(throwItem)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1100,7 +1100,7 @@ function GamePage() {
                                                             className: "flex items-center",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "font-bold mr-2",
+                                                                    className: "font-bold text-sm md:text-base mr-1 md:mr-2",
                                                                     children: calculateScoreValue(throwItem.type, throwItem.value)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1124,7 +1124,7 @@ function GamePage() {
                                                         }, this)
                                                     ]
                                                 }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-gray-500 text-sm",
+                                                    className: "text-gray-500 text-xs md:text-sm",
                                                     children: [
                                                         "Kast ",
                                                         index + 1
@@ -1146,7 +1146,7 @@ function GamePage() {
                                         columnNumber: 17
                                     }, this),
                                     errorMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-sm text-red-200",
+                                        className: "mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs md:text-sm text-red-200",
                                         children: errorMessage
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1179,7 +1179,7 @@ function GamePage() {
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gray-800 rounded-lg p-4",
+                    className: "bg-gray-800 rounded-lg p-2 md:p-4 mx-2",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DartboardCompactInput$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         onNumberClick: handleNumberClick,
                         onBullClick: handleBullClick,
@@ -1200,7 +1200,7 @@ function GamePage() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center text-gray-500 text-sm mt-8",
+                    className: "text-center text-gray-500 text-xs md:text-sm mt-4 md:mt-8",
                     children: "© 2025 Dart Scorer. Alla rättigheter reserverade."
                 }, void 0, false, {
                     fileName: "[project]/src/app/game/[id]/page.tsx",

@@ -216,17 +216,17 @@ export default function GamePage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-2 md:p-4 max-w-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4 px-2">
           <div className="flex items-center">
             <button 
               onClick={() => router.push('/game')} 
-              className="text-red-500 hover:text-red-400"
+              className="text-red-500 hover:text-red-400 text-2xl"
             >
               ≡
             </button>
-            <h1 className="text-2xl font-bold ml-4">Dart Scorer</h1>
+            <h1 className="text-xl md:text-2xl font-bold ml-4">Dart Scorer</h1>
           </div>
           <button
             onClick={() => {
@@ -235,32 +235,32 @@ export default function GamePage() {
                 router.push(`/game/${id}/summary`);
               }
             }}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm"
+            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm"
           >
             Avsluta spel
           </button>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-4xl font-serif mb-8">Pågående spel</h2>
+        <h2 className="text-2xl md:text-4xl font-serif mb-4 md:mb-8 px-2">Pågående spel</h2>
 
         {/* Active Player Section */}
         {activePlayerId && (
-          <div className="bg-gray-800 rounded-lg p-6 mb-6">
+          <div className="bg-gray-800 rounded-lg p-3 md:p-6 mb-4 md:mb-6 mx-2">
             <div className="mb-4">
-              <h3 className="text-3xl font-bold">{getPlayer(activePlayerId)?.name}</h3>
-              <div className="text-xl mt-2">
+              <h3 className="text-2xl md:text-3xl font-bold">{getPlayer(activePlayerId)?.name}</h3>
+              <div className="text-lg md:text-xl mt-2">
                 <span className="mr-2">{calculateRemainingScore()}</span>
                 <span className="text-gray-400">Snitt: {getPlayerAverageScore(activePlayerId, id)}</span>
               </div>
-              <div className="text-gray-400">Aktuell spelare</div>
+              <div className="text-gray-400 text-sm">Aktuell spelare</div>
             </div>
 
             {/* Current Score and Throws */}
             <div className="mb-4">
-              <div className="bg-gray-700 rounded p-4">
+              <div className="bg-gray-700 rounded p-3 md:p-4">
                 <div className="text-sm text-gray-400 mb-2">Aktuella kast ({throws.length}/3):</div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-2 md:gap-4">
                   {[0, 1, 2].map((index) => {
                     const throwItem = throws[index];
                     return (
@@ -272,9 +272,9 @@ export default function GamePage() {
                       >
                         {throwItem ? (
                           <>
-                            <span className="text-sm">{renderThrowLabel(throwItem)}</span>
+                            <span className="text-xs md:text-sm">{renderThrowLabel(throwItem)}</span>
                             <div className="flex items-center">
-                              <span className="font-bold mr-2">
+                              <span className="font-bold text-sm md:text-base mr-1 md:mr-2">
                                 {calculateScoreValue(throwItem.type, throwItem.value)}
                               </span>
                               <button 
@@ -286,14 +286,14 @@ export default function GamePage() {
                             </div>
                           </>
                         ) : (
-                          <span className="text-gray-500 text-sm">Kast {index + 1}</span>
+                          <span className="text-gray-500 text-xs md:text-sm">Kast {index + 1}</span>
                         )}
                       </div>
                     );
                   })}
                 </div>
                 {errorMessage && (
-                  <div className="mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-sm text-red-200">
+                  <div className="mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs md:text-sm text-red-200">
                     {errorMessage}
                   </div>
                 )}
@@ -309,7 +309,7 @@ export default function GamePage() {
         )}
 
         {/* Dartboard Input */}
-        <div className="bg-gray-800 rounded-lg p-4">
+        <div className="bg-gray-800 rounded-lg p-2 md:p-4 mx-2">
           <DartboardCompactInput 
             onNumberClick={handleNumberClick}
             onBullClick={handleBullClick}
@@ -323,7 +323,7 @@ export default function GamePage() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-500 text-sm mt-8">
+        <div className="text-center text-gray-500 text-xs md:text-sm mt-4 md:mt-8">
           © 2025 Dart Scorer. Alla rättigheter reserverade.
         </div>
       </div>

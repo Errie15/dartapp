@@ -26,10 +26,10 @@ export default function DartboardCompactInput({
   return (
     <div>
       {/* Score Type Selector */}
-      <div className="grid grid-cols-6 gap-2 mb-4">
+      <div className="grid grid-cols-6 gap-1 md:gap-2 mb-2 md:mb-4">
         <button 
           onClick={() => setScoreType("single")}
-          className={`p-2 rounded text-white text-sm font-medium ${
+          className={`py-3 md:p-2 rounded text-white text-sm font-medium ${
             scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"
           }`}
           disabled={disabled || throwCount >= 3}
@@ -38,7 +38,7 @@ export default function DartboardCompactInput({
         </button>
         <button 
           onClick={() => setScoreType("double")}
-          className={`p-2 rounded text-white text-sm font-medium ${
+          className={`py-3 md:p-2 rounded text-white text-sm font-medium ${
             scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"
           }`}
           disabled={disabled || throwCount >= 3}
@@ -47,7 +47,7 @@ export default function DartboardCompactInput({
         </button>
         <button 
           onClick={() => setScoreType("triple")}
-          className={`p-2 rounded text-white text-sm font-medium ${
+          className={`py-3 md:p-2 rounded text-white text-sm font-medium ${
             scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"
           }`}
           disabled={disabled || throwCount >= 3}
@@ -56,21 +56,21 @@ export default function DartboardCompactInput({
         </button>
         <button 
           onClick={() => onBullClick(true)}
-          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          className="py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium"
           disabled={disabled || throwCount >= 3}
         >
           B
         </button>
         <button 
           onClick={() => onBullClick(false)}
-          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          className="py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium"
           disabled={disabled || throwCount >= 3}
         >
           25
         </button>
         <button 
           onClick={onMissClick}
-          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          className="py-3 md:p-2 rounded bg-black-charcoal text-white text-sm font-medium"
           disabled={disabled || throwCount >= 3}
         >
           MISS
@@ -78,13 +78,13 @@ export default function DartboardCompactInput({
       </div>
 
       {/* Numbers Grid */}
-      <div className="grid grid-cols-7 gap-2 mb-4">
+      <div className="grid grid-cols-5 md:grid-cols-7 gap-1 md:gap-2 mb-2 md:mb-4">
         {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((num) => (
           <button
             key={num}
             onClick={() => onNumberClick(num)}
             disabled={disabled || throwCount >= 3}
-            className="p-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
+            className="py-3 md:p-2 rounded bg-black-charcoal text-white text-base md:text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {num}
           </button>
@@ -95,7 +95,7 @@ export default function DartboardCompactInput({
       <button
         onClick={onScoreSubmit}
         disabled={disabled || throwCount === 0}
-        className={`w-full p-3 rounded text-center text-sm font-medium ${
+        className={`w-full py-4 md:p-3 rounded text-center text-sm font-medium ${
           disabled || throwCount === 0
             ? "bg-black-charcoal text-gray-500"
             : "bg-accent-primary hover:bg-red-burgundy text-white"
