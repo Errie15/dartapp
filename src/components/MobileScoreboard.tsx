@@ -37,13 +37,13 @@ export default function MobileScoreboard({
   
   return (
     <div className="mobile-scoreboard">
-      <div className="mobile-scoreboard-header">
+      <div className="grid grid-cols-3 gap-2 p-2 bg-black-charcoal text-gray-400 text-sm">
         <div>Spelare</div>
         <div>Poäng</div>
         <div>Kvar</div>
       </div>
       
-      <div>
+      <div className="space-y-1">
         {sortedPlayers.map((player) => {
           const isActive = player.id === activePlayerId;
           const totalScore = playerScores[player.id] || 0;
@@ -53,9 +53,12 @@ export default function MobileScoreboard({
           return (
             <div 
               key={player.id} 
-              className={`mobile-scoreboard-row ${isActive ? 'active' : ''} ${isWinner ? 'bg-gradient-luxury border-l-3 border-gold-accent' : ''}`}
+              className={`grid grid-cols-3 gap-2 p-2 items-center ${
+                isActive ? 'bg-accent-primary/10' : ''} ${
+                isWinner ? 'bg-gradient-luxury border-l-3 border-gold-accent' : ''
+              }`}
             >
-              <div className="mobile-scoreboard-player flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 {isActive && !isWinner && (
                   <FaArrowDown className="text-accent-primary animate-pulse" />
                 )}
@@ -68,11 +71,14 @@ export default function MobileScoreboard({
                 <span className={isWinner ? 'text-gold-accent font-display' : ''}>{player.name}</span>
               </div>
               
-              <div className="mobile-scoreboard-score">
+              <div className="text-center">
                 {totalScore}
               </div>
               
-              <div className={`mobile-scoreboard-score ${isWinner ? 'text-gold-accent' : remainingScore < 50 ? 'text-accent-primary' : ''}`}>
+              <div className={`text-center ${
+                isWinner ? 'text-gold-accent' : 
+                remainingScore < 50 ? 'text-accent-primary' : ''
+              }`}>
                 {remainingScore}
               </div>
             </div>
