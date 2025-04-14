@@ -24,65 +24,59 @@ export default function DartboardCompactInput({
   disabled
 }: DartboardCompactInputProps) {
   return (
-    <div>
-      {/* Score Type Selector */}
-      <div className="grid grid-cols-1 gap-1 mb-1">
+    <div className="p-2">
+      <div className="grid grid-cols-6 auto-rows-[40px] gap-1">
+        {/* First row: E D T 25 B MISS */}
         <button 
           onClick={() => setScoreType("single")}
-          className={`py-2 rounded text-white text-sm font-medium ${
+          className={`rounded text-white text-xs font-medium flex items-center justify-center ${
             scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"
-          }`}
+          } hover:bg-black-smoke`}
           disabled={disabled || throwCount >= 3}
         >
           E
         </button>
         <button 
           onClick={() => setScoreType("double")}
-          className={`py-2 rounded text-white text-sm font-medium ${
+          className={`rounded text-white text-xs font-medium flex items-center justify-center ${
             scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"
-          }`}
+          } hover:bg-black-smoke`}
           disabled={disabled || throwCount >= 3}
         >
           D
         </button>
         <button 
           onClick={() => setScoreType("triple")}
-          className={`py-2 rounded text-white text-sm font-medium ${
+          className={`rounded text-white text-xs font-medium flex items-center justify-center ${
             scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"
-          }`}
+          } hover:bg-black-smoke`}
           disabled={disabled || throwCount >= 3}
         >
           T
         </button>
-      </div>
-
-      {/* Bull and Miss */}
-      <div className="grid grid-cols-3 gap-1 mb-1">
         <button 
           onClick={() => onBullClick(false)}
-          className="py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke"
+          className="rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke"
           disabled={disabled || throwCount >= 3}
         >
           25
         </button>
         <button 
           onClick={() => onBullClick(true)}
-          className="py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke"
+          className="rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke"
           disabled={disabled || throwCount >= 3}
         >
           B
         </button>
         <button 
           onClick={onMissClick}
-          className="py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke"
+          className="rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke"
           disabled={disabled || throwCount >= 3}
         >
           MISS
         </button>
-      </div>
 
-      {/* Numbers Grid */}
-      <div className="grid grid-cols-5 gap-1 mb-1">
+        {/* Numbers Grid - will automatically flow into rows of 6 */}
         {[...Array(20)].map((_, i) => {
           const num = i + 1;
           return (
@@ -90,7 +84,7 @@ export default function DartboardCompactInput({
               key={num}
               onClick={() => onNumberClick(num)}
               disabled={disabled || throwCount >= 3}
-              className="py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
+              className="rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {num}
             </button>
@@ -102,7 +96,7 @@ export default function DartboardCompactInput({
       <button
         onClick={onScoreSubmit}
         disabled={disabled || throwCount === 0}
-        className={`w-full py-3 rounded text-center text-sm font-medium ${
+        className={`w-full h-[40px] mt-1 rounded text-center text-sm font-medium ${
           disabled || throwCount === 0
             ? "bg-black-charcoal text-gray-500"
             : "bg-accent-primary hover:bg-red-burgundy text-white"

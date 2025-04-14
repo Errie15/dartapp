@@ -231,13 +231,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScoreSubmit, scoreType, setScoreType, throwCount, disabled }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "p-2",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 gap-1 mb-1",
+                className: "grid grid-cols-6 auto-rows-[40px] gap-1",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("single"),
-                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `rounded text-white text-xs font-medium flex items-center justify-center ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"} hover:bg-black-smoke`,
                         disabled: disabled || throwCount >= 3,
                         children: "E"
                     }, void 0, false, {
@@ -247,7 +248,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("double"),
-                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `rounded text-white text-xs font-medium flex items-center justify-center ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"} hover:bg-black-smoke`,
                         disabled: disabled || throwCount >= 3,
                         children: "D"
                     }, void 0, false, {
@@ -257,85 +258,69 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("triple"),
-                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `rounded text-white text-xs font-medium flex items-center justify-center ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"} hover:bg-black-smoke`,
                         disabled: disabled || throwCount >= 3,
                         children: "T"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
                         lineNumber: 48,
                         columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 29,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-3 gap-1 mb-1",
-                children: [
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(false),
-                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
+                        className: "rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "25"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 61,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(true),
-                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
+                        className: "rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "B"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 68,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: onMissClick,
-                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
+                        className: "rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "MISS"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 75,
+                        lineNumber: 71,
                         columnNumber: 9
-                    }, this)
+                    }, this),
+                    [
+                        ...Array(20)
+                    ].map((_, i)=>{
+                        const num = i + 1;
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>onNumberClick(num),
+                            disabled: disabled || throwCount >= 3,
+                            className: "rounded bg-black-charcoal text-white text-xs font-medium flex items-center justify-center hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
+                            children: num
+                        }, num, false, {
+                            fileName: "[project]/src/components/DartboardCompactInput.tsx",
+                            lineNumber: 83,
+                            columnNumber: 13
+                        }, this);
+                    })
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 60,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-5 gap-1 mb-1",
-                children: [
-                    ...Array(20)
-                ].map((_, i)=>{
-                    const num = i + 1;
-                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>onNumberClick(num),
-                        disabled: disabled || throwCount >= 3,
-                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
-                        children: num
-                    }, num, false, {
-                        fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 89,
-                        columnNumber: 13
-                    }, this);
-                })
-            }, void 0, false, {
-                fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 85,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: onScoreSubmit,
                 disabled: disabled || throwCount === 0,
-                className: `w-full py-3 rounded text-center text-sm font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
+                className: `w-full h-[40px] mt-1 rounded text-center text-sm font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
                 children: [
                     "REGISTRERA (",
                     throwCount,
@@ -343,7 +328,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 102,
+                lineNumber: 96,
                 columnNumber: 7
             }, this)
         ]

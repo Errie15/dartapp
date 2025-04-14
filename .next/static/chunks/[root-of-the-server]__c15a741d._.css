@@ -127,6 +127,10 @@
   display: table;
 }
 
+.h-\[40px\] {
+  height: 40px;
+}
+
 .h-full {
   height: 100%;
 }
@@ -173,6 +177,10 @@
 
 .resize {
   resize: both;
+}
+
+.auto-rows-\[40px\] {
+  grid-auto-rows: 40px;
 }
 
 .grid-cols-1 {
