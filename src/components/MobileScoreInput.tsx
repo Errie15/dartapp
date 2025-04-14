@@ -43,9 +43,9 @@ export default function MobileScoreInput({
       </div>
       
       {/* Score Type and Special Buttons Grid */}
-      <div className="grid grid-cols-3 gap-1 mb-1">
+      <div className="flex flex-row justify-center gap-1 mb-1">
         <button 
-          className={`h-12 w-full max-w-[60px] mx-auto rounded text-white text-sm font-medium flex items-center justify-center ${
+          className={`w-12 h-12 rounded text-white text-sm font-medium flex items-center justify-center ${
             scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"
           } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("single")}
@@ -53,7 +53,7 @@ export default function MobileScoreInput({
           E
         </button>
         <button 
-          className={`h-12 w-full max-w-[60px] mx-auto rounded text-white text-sm font-medium flex items-center justify-center ${
+          className={`w-12 h-12 rounded text-white text-sm font-medium flex items-center justify-center ${
             scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"
           } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("double")}
@@ -61,7 +61,7 @@ export default function MobileScoreInput({
           D
         </button>
         <button 
-          className={`h-12 w-full max-w-[60px] mx-auto rounded text-white text-sm font-medium flex items-center justify-center ${
+          className={`w-12 h-12 rounded text-white text-sm font-medium flex items-center justify-center ${
             scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"
           } hover:bg-black-smoke`}
           onClick={() => handleTypeSelect("triple")}
@@ -70,23 +70,23 @@ export default function MobileScoreInput({
         </button>
       </div>
 
-      <div className="grid grid-cols-3 gap-1 mb-1">
+      <div className="flex flex-row justify-center gap-1 mb-1">
         <button 
-          className="h-12 w-full max-w-[60px] mx-auto rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
+          className="w-12 h-12 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
           onClick={() => handleQuickScore(25, "outerBull")}
           disabled={disabled || remainingThrows === 0}
         >
           25
         </button>
         <button 
-          className="h-12 w-full max-w-[60px] mx-auto rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
+          className="w-12 h-12 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
           onClick={() => handleQuickScore(50, "innerBull")}
           disabled={disabled || remainingThrows === 0}
         >
           B
         </button>
         <button 
-          className="h-12 w-full max-w-[60px] mx-auto rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
+          className="w-12 h-12 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke"
           onClick={() => handleQuickScore(0, "single")}
           disabled={disabled || remainingThrows === 0}
         >
@@ -101,7 +101,7 @@ export default function MobileScoreInput({
             key={num}
             onClick={() => handleQuickScore(num, scoreType)}
             disabled={disabled || remainingThrows === 0}
-            className="h-12 w-full max-w-[50px] mx-auto rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-12 h-12 rounded bg-black-charcoal text-white text-sm font-medium flex items-center justify-center hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {num}
           </button>
