@@ -16,7 +16,7 @@ export default function CheckoutSuggestion({
   
   useEffect(() => {
     // Beräkna checkout-vägar endast om komponenten är aktiv
-    if (isActive && remainingScore > 0) {
+    if (isActive && remainingScore > 0 && remainingScore <= 170) { // 170 är högsta möjliga checkout
       const paths = getRecommendedCheckouts(remainingScore);
       setCheckoutPaths(paths);
     } else {
@@ -26,6 +26,7 @@ export default function CheckoutSuggestion({
   
   // Om det inte finns några checkout-vägar eller scoren är 0, visa inget
   if (checkoutPaths.length === 0 || remainingScore === 0) {
+    // Om poängen är 0, visa inget
     if (remainingScore === 0) {
       return null;
     }
@@ -33,51 +34,34 @@ export default function CheckoutSuggestion({
     // Om vi har 1 poäng kvar, visa specialmeddelande
     if (remainingScore === 1) {
       return (
-        <div className="mt-3 bg-yellow-50 border border-yellow-200 rounded-md p-2">
-          <div className="text-sm text-yellow-800 font-medium mb-1">
-            Ingen checkout möjlig
+        <div className="bg-gray-700 rounded p-4 flex items-center">
+          <div className="bg-gray-600 p-2 rounded-full mr-4">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
           </div>
-          <p className="text-xs text-yellow-700">
-            Med 1 poäng kvar går det inte att checka ut eftersom senaste pilen måste landa i en dubbel.
-          </p>
+          <div>
+            <div className="text-sm text-gray-400">Ingen checkout möjlig</div>
+            <div className="text-sm text-gray-300">Måste avsluta på en dubbel</div>
+          </div>
         </div>
       );
     }
     
-    return (
-      <div className="mt-3 bg-gray-50 border border-gray-200 rounded-md p-2">
-        <div className="text-sm text-gray-800 font-medium mb-1">
-          Ingen rekommenderad checkout
-        </div>
-        <p className="text-xs text-gray-700">
-          Kunde inte hitta en checkout-väg för {remainingScore} poäng med max 3 pilar.
-        </p>
-      </div>
-    );
+    // Om poängen är över 170 eller ingen checkout hittades, visa inget
+    return null;
   }
   
   return (
-    <div className="mt-3 bg-green-50 border border-green-200 rounded-md p-2">
-      <div className="text-sm text-green-800 font-medium mb-1">
-        Checkout-förslag ({checkoutPaths[0].totalThrows} pilar)
+    <div className="bg-gray-700 rounded p-4 flex items-center">
+      <div className="bg-gray-600 p-2 rounded-full mr-4">
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
       </div>
-      
-      <ul className="space-y-1.5">
-        {checkoutPaths.map((path, index) => (
-          <li key={index} className="flex items-center">
-            <span className="inline-block w-5 h-5 rounded-full bg-green-600 text-white text-xs flex items-center justify-center mr-2">
-              {index + 1}
-            </span>
-            <span className="text-sm text-green-800 font-medium">
-              {formatCheckoutPath(path)}
-            </span>
-          </li>
-        ))}
-      </ul>
-      
-      {/* Information om dubblar */}
-      <div className="mt-2 text-xs text-green-700">
-        <p>Kom ihåg: Det sista kastet måste vara en dubbel.</p>
+      <div>
+        <div className="text-sm text-gray-400">Checkout-förslag</div>
+        <div className="text-lg">{checkoutPaths[0].totalThrows} pil: {formatCheckoutPath(checkoutPaths[0])}</div>
       </div>
     </div>
   );

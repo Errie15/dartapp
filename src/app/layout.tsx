@@ -24,8 +24,10 @@ export default function RootLayout({
     <html lang="sv" className={montserrat.variable}>
       <body className="antialiased bg-black-rich min-h-screen">
         <Header />
-        <main className="pt-28 pb-16">
-          {children}
+        <main className="container mx-auto px-container pt-24 pb-16">
+          <div className="animate-fade-in">
+            {children}
+          </div>
         </main>
         <footer className="bg-gradient-luxury py-8 border-t border-gray-800">
           <div className="container mx-auto px-container">

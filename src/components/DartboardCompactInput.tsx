@@ -23,93 +23,86 @@ export default function DartboardCompactInput({
   throwCount,
   disabled
 }: DartboardCompactInputProps) {
-  // Reorganized to 5 rows of 4 columns for symmetry
-  const dartboardNumbersGrid = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-    [13, 14, 15, 16],
-    [17, 18, 19, 20]
-  ];
-
   return (
     <div>
-      <div className="bg-black p-2 rounded-lg">
-        {/* Score Type Selector */}
-        <div className="mb-1.5">
-          <div className="flex justify-between bg-gray-800 rounded-lg p-0.5">
-            {(["single", "double", "triple"] as ScoreType[]).map((type) => (
-              <button
-                key={type}
-                onClick={() => setScoreType(type)}
-                className={`flex-1 py-0.5 px-1 rounded text-center text-xs mx-0.5 ${
-                  scoreType === type
-                    ? "bg-red-600 text-white"
-                    : "bg-gray-700 text-gray-300"
-                }`}
-              >
-                {type === "single" ? "E" : type === "double" ? "D" : "T"}
-              </button>
-            ))}
-          </div>
-        </div>
-        
-        {/* Special Buttons */}
-        <div className="flex justify-between gap-1 mb-1.5">
-          <button
-            onClick={() => onBullClick(true)}
-            disabled={disabled}
-            className="flex-1 py-0.5 rounded bg-yellow-600 text-white font-medium text-xs"
-          >
-            BULL
-          </button>
-          <button
-            onClick={() => onBullClick(false)}
-            disabled={disabled}
-            className="flex-1 py-0.5 rounded bg-green-600 text-white font-medium text-xs mx-1"
-          >
-            25
-          </button>
-          <button
-            onClick={onMissClick}
-            disabled={disabled}
-            className="flex-1 py-0.5 rounded bg-red-600 text-white font-medium text-xs"
-          >
-            MISS
-          </button>
-        </div>
-        
-        {/* Numbers Grid - Symmetrical layout */}
-        <div className="mb-1.5">
-          {dartboardNumbersGrid.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex justify-between gap-1 mb-1">
-              {row.map(number => (
-                <button
-                  key={number}
-                  onClick={() => onNumberClick(number)}
-                  disabled={disabled}
-                  className="flex-1 py-0.5 px-0 rounded bg-gray-700 text-white font-medium text-xs mx-0.5"
-                >
-                  {number}
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
-        
-        {/* Submit Button */}
-        <button
-          onClick={onScoreSubmit}
-          disabled={(disabled && throwCount < 3) || throwCount === 0}
-          className={`w-full py-1 rounded-sm ${
-            (disabled && throwCount < 3) || throwCount === 0
-              ? "bg-gray-600 text-gray-400"
-              : "bg-red-600 text-white"
-          } font-medium text-xs`}
+      {/* Score Type Selector */}
+      <div className="grid grid-cols-6 gap-2 mb-4">
+        <button 
+          onClick={() => setScoreType("single")}
+          className={`p-2 rounded text-white text-sm font-medium ${
+            scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"
+          }`}
+          disabled={disabled || throwCount >= 3}
         >
-          REGISTRERA ({throwCount}/3)
+          E
+        </button>
+        <button 
+          onClick={() => setScoreType("double")}
+          className={`p-2 rounded text-white text-sm font-medium ${
+            scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"
+          }`}
+          disabled={disabled || throwCount >= 3}
+        >
+          D
+        </button>
+        <button 
+          onClick={() => setScoreType("triple")}
+          className={`p-2 rounded text-white text-sm font-medium ${
+            scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"
+          }`}
+          disabled={disabled || throwCount >= 3}
+        >
+          T
+        </button>
+        <button 
+          onClick={() => onBullClick(true)}
+          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          disabled={disabled || throwCount >= 3}
+        >
+          B
+        </button>
+        <button 
+          onClick={() => onBullClick(false)}
+          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          disabled={disabled || throwCount >= 3}
+        >
+          25
+        </button>
+        <button 
+          onClick={onMissClick}
+          className="p-2 rounded bg-black-charcoal text-white text-sm font-medium"
+          disabled={disabled || throwCount >= 3}
+        >
+          MISS
         </button>
       </div>
+
+      {/* Numbers Grid */}
+      <div className="grid grid-cols-7 gap-2 mb-4">
+        {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((num) => (
+          <button
+            key={num}
+            onClick={() => onNumberClick(num)}
+            disabled={disabled || throwCount >= 3}
+            className="p-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {num}
+          </button>
+        ))}
+      </div>
+
+      {/* Submit Button */}
+      <button
+        onClick={onScoreSubmit}
+        disabled={disabled || throwCount === 0}
+        className={`w-full p-3 rounded text-center text-sm font-medium ${
+          disabled || throwCount === 0
+            ? "bg-black-charcoal text-gray-500"
+            : "bg-accent-primary hover:bg-red-burgundy text-white"
+        }`}
+      >
+        REGISTRERA ({throwCount}/3)
+      </button>
     </div>
   );
 } 

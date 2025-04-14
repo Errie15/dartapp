@@ -199,117 +199,132 @@ export default function GamePage() {
     return `${throwItem.type === "single" ? "Enkel" : throwItem.type === "double" ? "Dubbel" : "Trippel"} ${throwItem.value}`;
   };
   
-  // Safeguard against null or undefined playerIds
-  const playerIds = game.playerIds || [];
+  // Beräkna kvarvarande poäng efter aktuella kast
+  const calculateRemainingScore = () => {
+    if (!activePlayerId) return 0;
+    
+    const startingScore = getPlayerRemainingScore(activePlayerId, id);
+    const throwsTotal = throws.reduce((sum, throwItem) => {
+      let value = throwItem.value;
+      if (throwItem.type === 'double') value *= 2;
+      if (throwItem.type === 'triple') value *= 3;
+      return sum + value;
+    }, 0);
+    
+    return startingScore - throwsTotal;
+  };
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Pågående spel</h1>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Player Scores */}
-        <div className="lg:col-span-1 bg-white rounded-lg shadow-md overflow-hidden">
-          <h2 className="text-xl font-semibold p-4 bg-gray-100">Spelare</h2>
-          
-          <ul className="divide-y divide-gray-200">
-            {playerIds.map((playerId) => {
-              const player = getPlayer(playerId);
-              const remainingScore = getPlayerRemainingScore(playerId, id);
-              const avgScore = getPlayerAverageScore(playerId, id);
-              const isActive = activePlayerId === playerId;
-              
-              return (
-                <li 
-                  key={playerId} 
-                  className={`p-4 ${isActive ? "bg-blue-50" : ""}`}
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="font-medium">{player?.name}</div>
-                    <div className="text-2xl font-bold">{remainingScore}</div>
-                  </div>
-                  <div className="text-sm text-gray-500 mt-1">
-                    Snitt: {avgScore > 0 ? avgScore : "-"}
-                  </div>
-                  
-                  {isActive && (
-                    <>
-                      <div className="mt-2 p-2 bg-blue-100 rounded-md text-sm text-blue-800 mb-2">
-                        Aktuell spelare
-                      </div>
-                      
-                      {/* Current Throws (in player box) */}
-                      <div className="mt-3">
-                        {throws.length === 0 ? (
-                          <div className="text-sm text-gray-500">
-                            Inga kast ännu ({throws.length}/3)
-                          </div>
-                        ) : (
-                          <div className="bg-white border border-blue-200 rounded-md p-2">
-                            <div className="text-sm text-blue-800 mb-1 font-medium">
-                              Aktuella kast ({throws.length}/3):
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="container mx-auto p-4">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center">
+            <button 
+              onClick={() => router.push('/game')} 
+              className="text-red-500 hover:text-red-400"
+            >
+              ≡
+            </button>
+            <h1 className="text-2xl font-bold ml-4">Dart Scorer</h1>
+          </div>
+          <button
+            onClick={() => {
+              if (window.confirm('Är du säker på att du vill avsluta spelet?')) {
+                endGame(id);
+                router.push(`/game/${id}/summary`);
+              }
+            }}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm"
+          >
+            Avsluta spel
+          </button>
+        </div>
+
+        {/* Main Title */}
+        <h2 className="text-4xl font-serif mb-8">Pågående spel</h2>
+
+        {/* Active Player Section */}
+        {activePlayerId && (
+          <div className="bg-gray-800 rounded-lg p-6 mb-6">
+            <div className="mb-4">
+              <h3 className="text-3xl font-bold">{getPlayer(activePlayerId)?.name}</h3>
+              <div className="text-xl mt-2">
+                <span className="mr-2">{calculateRemainingScore()}</span>
+                <span className="text-gray-400">Snitt: {getPlayerAverageScore(activePlayerId, id)}</span>
+              </div>
+              <div className="text-gray-400">Aktuell spelare</div>
+            </div>
+
+            {/* Current Score and Throws */}
+            <div className="mb-4">
+              <div className="bg-gray-700 rounded p-4">
+                <div className="text-sm text-gray-400 mb-2">Aktuella kast ({throws.length}/3):</div>
+                <div className="grid grid-cols-3 gap-4">
+                  {[0, 1, 2].map((index) => {
+                    const throwItem = throws[index];
+                    return (
+                      <div 
+                        key={index} 
+                        className={`flex justify-between items-center p-2 rounded ${
+                          throwItem ? 'bg-gray-600' : 'bg-gray-800'
+                        }`}
+                      >
+                        {throwItem ? (
+                          <>
+                            <span className="text-sm">{renderThrowLabel(throwItem)}</span>
+                            <div className="flex items-center">
+                              <span className="font-bold mr-2">
+                                {calculateScoreValue(throwItem.type, throwItem.value)}
+                              </span>
+                              <button 
+                                onClick={() => handleRemoveThrow(index)}
+                                className="text-red-500 hover:text-red-400 p-1"
+                              >
+                                ×
+                              </button>
                             </div>
-                            <ul className="space-y-1">
-                              {throws.map((throwItem, index) => (
-                                <li key={index} className="flex justify-between items-center text-sm">
-                                  <span>{renderThrowLabel(throwItem)}</span>
-                                  <div className="flex items-center">
-                                    <span className="font-bold mr-2">
-                                      {calculateScoreValue(throwItem.type, throwItem.value)}
-                                    </span>
-                                    <button 
-                                      onClick={() => handleRemoveThrow(index)}
-                                      className="text-red-500 hover:text-red-700 p-1 text-xs"
-                                    >
-                                      ×
-                                    </button>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                            
-                            {/* Error message for bust */}
-                            {errorMessage && (
-                              <div className="mt-2 p-1.5 bg-red-50 border border-red-200 rounded text-xs text-red-700">
-                                {errorMessage}
-                              </div>
-                            )}
-                          </div>
+                          </>
+                        ) : (
+                          <span className="text-gray-500 text-sm">Kast {index + 1}</span>
                         )}
                       </div>
-                      
-                      {/* Checkout Suggestion */}
-                      <CheckoutSuggestion 
-                        remainingScore={remainingScore} 
-                        isActive={isActive} 
-                      />
-                    </>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        
-        {/* Dartboard Input */}
-        <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
-            <h2 className="text-xl font-semibold p-4 bg-gray-100">
-              {activePlayerId ? `${getPlayer(activePlayerId)?.name}s tur (${throws.length}/3)` : "Välj en spelare"}
-            </h2>
-            
-            <div className="p-4">
-              <DartboardCompactInput 
-                onNumberClick={handleNumberClick}
-                onBullClick={handleBullClick}
-                onMissClick={handleMissClick}
-                onScoreSubmit={handleScoreSubmit}
-                scoreType={scoreType}
-                setScoreType={setScoreType}
-                throwCount={throws.length}
-                disabled={!activePlayerId || throws.length >= 3}
-              />
+                    );
+                  })}
+                </div>
+                {errorMessage && (
+                  <div className="mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-sm text-red-200">
+                    {errorMessage}
+                  </div>
+                )}
+              </div>
             </div>
+
+            {/* Checkout Suggestion */}
+            <CheckoutSuggestion 
+              remainingScore={calculateRemainingScore()}
+              isActive={true}
+            />
           </div>
+        )}
+
+        {/* Dartboard Input */}
+        <div className="bg-gray-800 rounded-lg p-4">
+          <DartboardCompactInput 
+            onNumberClick={handleNumberClick}
+            onBullClick={handleBullClick}
+            onMissClick={handleMissClick}
+            onScoreSubmit={handleScoreSubmit}
+            scoreType={scoreType}
+            setScoreType={setScoreType}
+            throwCount={throws.length}
+            disabled={!activePlayerId}
+          />
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-gray-500 text-sm mt-8">
+          © 2025 Dart Scorer. Alla rättigheter reserverade.
         </div>
       </div>
     </div>
