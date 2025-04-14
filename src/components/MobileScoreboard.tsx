@@ -36,13 +36,15 @@ export default function MobileScoreboard({
   );
   
   return (
-    <div className="mobile-scoreboard">
-      <div className="grid grid-cols-3 gap-2 p-2 bg-black-charcoal text-gray-400 text-sm">
+    <div className="mobile-scoreboard w-full">
+      {/* Header */}
+      <div className="grid grid-cols-[2fr,1fr,1fr] gap-1 p-2 bg-black-charcoal text-gray-400 text-sm font-medium">
         <div>Spelare</div>
-        <div>Poäng</div>
-        <div>Kvar</div>
+        <div className="text-center">Poäng</div>
+        <div className="text-center">Kvar</div>
       </div>
       
+      {/* Players List */}
       <div className="space-y-1">
         {sortedPlayers.map((player) => {
           const isActive = player.id === activePlayerId;
@@ -53,29 +55,34 @@ export default function MobileScoreboard({
           return (
             <div 
               key={player.id} 
-              className={`grid grid-cols-3 gap-2 p-2 items-center ${
+              className={`grid grid-cols-[2fr,1fr,1fr] gap-1 p-2 items-center ${
                 isActive ? 'bg-accent-primary/10' : ''} ${
                 isWinner ? 'bg-gradient-luxury border-l-3 border-gold-accent' : ''
               }`}
             >
-              <div className="flex items-center gap-2">
+              {/* Player Name Column */}
+              <div className="flex items-center gap-2 min-w-0">
                 {isActive && !isWinner && (
-                  <FaArrowDown className="text-accent-primary animate-pulse" />
+                  <FaArrowDown className="text-accent-primary animate-pulse flex-shrink-0" />
                 )}
                 {isWinner && (
-                  <FaTrophy className="text-gold-accent" />
+                  <FaTrophy className="text-gold-accent flex-shrink-0" />
                 )}
                 {!isActive && !isWinner && (
-                  <FaCircle className="text-gray-700 text-xs" />
+                  <FaCircle className="text-gray-700 text-xs flex-shrink-0" />
                 )}
-                <span className={isWinner ? 'text-gold-accent font-display' : ''}>{player.name}</span>
+                <span className={`truncate ${isWinner ? 'text-gold-accent font-display' : ''}`}>
+                  {player.name}
+                </span>
               </div>
               
-              <div className="text-center">
+              {/* Score Column */}
+              <div className="text-center font-medium">
                 {totalScore}
               </div>
               
-              <div className={`text-center ${
+              {/* Remaining Score Column */}
+              <div className={`text-center font-medium ${
                 isWinner ? 'text-gold-accent' : 
                 remainingScore < 50 ? 'text-accent-primary' : ''
               }`}>
@@ -86,6 +93,7 @@ export default function MobileScoreboard({
         })}
       </div>
       
+      {/* Footer */}
       {showDetails && (
         <div className="p-3 bg-black-charcoal text-xs text-center text-gray-400">
           Runda {currentRound} • {winner ? 'Spel avslutat' : 'Pågående spel'}
