@@ -151,6 +151,10 @@
   width: 100%;
 }
 
+.max-w-\[50px\] {
+  max-width: 50px;
+}
+
 .max-w-\[60px\] {
   max-width: 60px;
 }
