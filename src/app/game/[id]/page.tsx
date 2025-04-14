@@ -256,11 +256,12 @@ export default function GamePage() {
               <div className="text-gray-400 text-sm">Aktuell spelare</div>
             </div>
 
-            {/* Current Score and Throws */}
-            <div className="mb-4">
+            {/* Current Score and Throws + Checkout in horizontal layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Current Score and Throws */}
               <div className="bg-gray-700 rounded p-3 md:p-4">
                 <div className="text-sm text-gray-400 mb-2">Aktuella kast ({throws.length}/3):</div>
-                <div className="grid grid-cols-3 gap-2 md:gap-4">
+                <div className="grid grid-cols-3 gap-2">
                   {[0, 1, 2].map((index) => {
                     const throwItem = throws[index];
                     return (
@@ -298,13 +299,15 @@ export default function GamePage() {
                   </div>
                 )}
               </div>
-            </div>
 
-            {/* Checkout Suggestion */}
-            <CheckoutSuggestion 
-              remainingScore={calculateRemainingScore()}
-              isActive={true}
-            />
+              {/* Checkout Suggestion */}
+              <div className="bg-gray-700 rounded p-3 md:p-4">
+                <CheckoutSuggestion 
+                  remainingScore={calculateRemainingScore()}
+                  isActive={true}
+                />
+              </div>
+            </div>
           </div>
         )}
 
