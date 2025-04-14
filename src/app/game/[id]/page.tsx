@@ -216,17 +216,17 @@ export default function GamePage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto p-2 md:p-4 max-w-2xl">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-4 px-2">
-          <div className="flex items-center">
+      <div className="container mx-auto p-2 max-w-2xl">
+        {/* Header with improved layout */}
+        <div className="flex items-center justify-between mb-4 px-2 h-14">
+          <div className="flex items-center gap-4">
             <button 
               onClick={() => router.push('/game')} 
-              className="text-red-500 hover:text-red-400 text-2xl"
+              className="text-red-500 hover:text-red-400 text-2xl w-8 h-8 flex items-center justify-center"
             >
               ≡
             </button>
-            <h1 className="text-xl md:text-2xl font-bold ml-4">Dart Scorer</h1>
+            <h1 className="text-xl font-bold">Dart Scorer</h1>
           </div>
           <button
             onClick={() => {
@@ -235,78 +235,79 @@ export default function GamePage() {
                 router.push(`/game/${id}/summary`);
               }
             }}
-            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm"
+            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm"
           >
             Avsluta spel
           </button>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-2xl md:text-4xl font-serif mb-4 md:mb-8 px-2">Pågående spel</h2>
+        <h2 className="text-2xl font-serif mb-4 px-2">Pågående spel</h2>
 
         {/* Active Player Section */}
         {activePlayerId && (
-          <div className="bg-gray-800 rounded-lg p-3 md:p-6 mb-4 md:mb-6 mx-2">
+          <div className="bg-gray-800 rounded-lg p-3 mb-4 mx-2">
             <div className="mb-4">
-              <h3 className="text-2xl md:text-3xl font-bold">{getPlayer(activePlayerId)?.name}</h3>
-              <div className="text-lg md:text-xl mt-2">
+              <h3 className="text-2xl font-bold">{getPlayer(activePlayerId)?.name}</h3>
+              <div className="text-lg mt-2">
                 <span className="mr-2">{calculateRemainingScore()}</span>
                 <span className="text-gray-400">Snitt: {getPlayerAverageScore(activePlayerId, id)}</span>
               </div>
               <div className="text-gray-400 text-sm">Aktuell spelare</div>
             </div>
 
-            {/* Current Score and Throws + Checkout in horizontal layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Current Score and Throws */}
-              <div className="bg-gray-700 rounded p-3 md:p-4">
+            {/* Current Score and Throws */}
+            <div className="mb-4">
+              <div className="bg-gray-700 rounded p-3">
                 <div className="text-sm text-gray-400 mb-2">Aktuella kast ({throws.length}/3):</div>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="flex gap-2">
                   {[0, 1, 2].map((index) => {
                     const throwItem = throws[index];
                     return (
                       <div 
                         key={index} 
-                        className={`flex justify-between items-center p-2 rounded ${
+                        className={`flex-1 p-2 rounded ${
                           throwItem ? 'bg-gray-600' : 'bg-gray-800'
-                        }`}
+                        } min-h-[48px] flex flex-col justify-between`}
                       >
                         {throwItem ? (
                           <>
-                            <span className="text-xs md:text-sm">{renderThrowLabel(throwItem)}</span>
-                            <div className="flex items-center">
-                              <span className="font-bold text-sm md:text-base mr-1 md:mr-2">
-                                {calculateScoreValue(throwItem.type, throwItem.value)}
-                              </span>
+                            <div className="flex justify-between items-start">
+                              <span className="text-xs">{renderThrowLabel(throwItem)}</span>
                               <button 
                                 onClick={() => handleRemoveThrow(index)}
-                                className="text-red-500 hover:text-red-400 p-1"
+                                className="text-red-500 hover:text-red-400 w-6 h-6 flex items-center justify-center rounded-full hover:bg-red-500/10"
                               >
                                 ×
                               </button>
                             </div>
+                            <div className="text-lg font-bold text-center">
+                              {calculateScoreValue(throwItem.type, throwItem.value)}
+                            </div>
                           </>
                         ) : (
-                          <span className="text-gray-500 text-xs md:text-sm">Kast {index + 1}</span>
+                          <div className="text-gray-500 text-xs flex items-center justify-center h-full">
+                            Kast {index + 1}
+                          </div>
                         )}
                       </div>
                     );
                   })}
                 </div>
                 {errorMessage && (
-                  <div className="mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs md:text-sm text-red-200">
+                  <div className="mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs text-red-200">
                     {errorMessage}
                   </div>
                 )}
               </div>
+            </div>
 
-              {/* Checkout Suggestion */}
-              <div className="bg-gray-700 rounded p-3 md:p-4">
-                <CheckoutSuggestion 
-                  remainingScore={calculateRemainingScore()}
-                  isActive={true}
-                />
-              </div>
+            {/* Checkout Suggestion */}
+            <div className="bg-gray-700 rounded p-3">
+              <CheckoutSuggestion 
+                remainingScore={calculateRemainingScore()}
+                isActive={true}
+              />
             </div>
           </div>
         )}

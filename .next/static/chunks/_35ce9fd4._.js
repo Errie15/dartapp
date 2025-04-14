@@ -236,36 +236,36 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-3 gap-1 mb-2",
+                className: "grid grid-cols-1 gap-1 mb-1",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("single"),
-                        className: `py-3 rounded text-white text-lg font-medium ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "single" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "E"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("double"),
-                        className: `py-3 rounded text-white text-lg font-medium ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "double" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "D"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setScoreType("triple"),
-                        className: `py-3 rounded text-white text-lg font-medium ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"}`,
+                        className: `py-2 rounded text-white text-sm font-medium ${scoreType === "triple" ? "bg-accent-primary" : "bg-black-charcoal"}`,
                         disabled: disabled || throwCount >= 3,
                         children: "T"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 49,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, this)
                 ]
@@ -275,121 +275,70 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-3 gap-1 mb-2",
+                className: "grid grid-cols-3 gap-1 mb-1",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(false),
-                        className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium",
+                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "25"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 62,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onBullClick(true),
-                        className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium",
+                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "B"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 69,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: onMissClick,
-                        className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium",
+                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke",
                         disabled: disabled || throwCount >= 3,
                         children: "MISS"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                        lineNumber: 76,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 61,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-5 gap-1 mb-2",
+                className: "grid grid-cols-5 gap-1 mb-1",
                 children: [
-                    [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                    ].map((num)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>onNumberClick(num),
-                            disabled: disabled || throwCount >= 3,
-                            className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
-                            children: num
-                        }, num, false, {
-                            fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                            lineNumber: 89,
-                            columnNumber: 11
-                        }, this)),
-                    [
-                        6,
-                        7,
-                        8,
-                        9,
-                        10
-                    ].map((num)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>onNumberClick(num),
-                            disabled: disabled || throwCount >= 3,
-                            className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
-                            children: num
-                        }, num, false, {
-                            fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                            lineNumber: 100,
-                            columnNumber: 11
-                        }, this)),
-                    [
-                        11,
-                        12,
-                        13,
-                        14,
-                        15
-                    ].map((num)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>onNumberClick(num),
-                            disabled: disabled || throwCount >= 3,
-                            className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
-                            children: num
-                        }, num, false, {
-                            fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                            lineNumber: 111,
-                            columnNumber: 11
-                        }, this)),
-                    [
-                        16,
-                        17,
-                        18,
-                        19,
-                        20
-                    ].map((num)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>onNumberClick(num),
-                            disabled: disabled || throwCount >= 3,
-                            className: "py-3 rounded bg-black-charcoal text-white text-lg font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
-                            children: num
-                        }, num, false, {
-                            fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                            lineNumber: 122,
-                            columnNumber: 11
-                        }, this))
-                ]
-            }, void 0, true, {
+                    ...Array(20)
+                ].map((_, i)=>{
+                    const num = i + 1;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>onNumberClick(num),
+                        disabled: disabled || throwCount >= 3,
+                        className: "py-2 rounded bg-black-charcoal text-white text-sm font-medium hover:bg-black-smoke disabled:opacity-50 disabled:cursor-not-allowed",
+                        children: num
+                    }, num, false, {
+                        fileName: "[project]/src/components/DartboardCompactInput.tsx",
+                        lineNumber: 89,
+                        columnNumber: 13
+                    }, this);
+                })
+            }, void 0, false, {
                 fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 86,
+                lineNumber: 85,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: onScoreSubmit,
                 disabled: disabled || throwCount === 0,
-                className: `w-full py-4 rounded text-center text-lg font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
+                className: `w-full py-3 rounded text-center text-sm font-medium ${disabled || throwCount === 0 ? "bg-black-charcoal text-gray-500" : "bg-accent-primary hover:bg-red-burgundy text-white"}`,
                 children: [
                     "REGISTRERA (",
                     throwCount,
@@ -397,7 +346,7 @@ function DartboardCompactInput({ onNumberClick, onBullClick, onMissClick, onScor
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DartboardCompactInput.tsx",
-                lineNumber: 134,
+                lineNumber: 102,
                 columnNumber: 7
             }, this)
         ]
@@ -988,17 +937,17 @@ function GamePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-gray-900 text-white",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "container mx-auto p-2 md:p-4 max-w-2xl",
+            className: "container mx-auto p-2 max-w-2xl",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between mb-4 px-2",
+                    className: "flex items-center justify-between mb-4 px-2 h-14",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center",
+                            className: "flex items-center gap-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>router.push('/game'),
-                                    className: "text-red-500 hover:text-red-400 text-2xl",
+                                    className: "text-red-500 hover:text-red-400 text-2xl w-8 h-8 flex items-center justify-center",
                                     children: "≡"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1006,7 +955,7 @@ function GamePage() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "text-xl md:text-2xl font-bold ml-4",
+                                    className: "text-xl font-bold",
                                     children: "Dart Scorer"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1026,7 +975,7 @@ function GamePage() {
                                     router.push(`/game/${id}/summary`);
                                 }
                             },
-                            className: "bg-red-600 hover:bg-red-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm",
+                            className: "bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm",
                             children: "Avsluta spel"
                         }, void 0, false, {
                             fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1040,7 +989,7 @@ function GamePage() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    className: "text-2xl md:text-4xl font-serif mb-4 md:mb-8 px-2",
+                    className: "text-2xl font-serif mb-4 px-2",
                     children: "Pågående spel"
                 }, void 0, false, {
                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1048,13 +997,13 @@ function GamePage() {
                     columnNumber: 9
                 }, this),
                 activePlayerId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gray-800 rounded-lg p-3 md:p-6 mb-4 md:mb-6 mx-2",
+                    className: "bg-gray-800 rounded-lg p-3 mb-4 mx-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mb-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-2xl md:text-3xl font-bold",
+                                    className: "text-2xl font-bold",
                                     children: getPlayer(activePlayerId)?.name
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/game/[id]/page.tsx",
@@ -1062,7 +1011,7 @@ function GamePage() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-lg md:text-xl mt-2",
+                                    className: "text-lg mt-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "mr-2",
@@ -1104,125 +1053,123 @@ function GamePage() {
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "grid grid-cols-1 md:grid-cols-2 gap-4",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-gray-700 rounded p-3 md:p-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-sm text-gray-400 mb-2",
-                                            children: [
-                                                "Aktuella kast (",
-                                                throws.length,
-                                                "/3):"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/game/[id]/page.tsx",
-                                            lineNumber: 263,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid grid-cols-3 gap-2",
-                                            children: [
-                                                0,
-                                                1,
-                                                2
-                                            ].map((index)=>{
-                                                const throwItem = throws[index];
-                                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: `flex justify-between items-center p-2 rounded ${throwItem ? 'bg-gray-600' : 'bg-gray-800'}`,
-                                                    children: throwItem ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-xs md:text-sm",
-                                                                children: renderThrowLabel(throwItem)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                                lineNumber: 276,
-                                                                columnNumber: 29
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex items-center",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "font-bold text-sm md:text-base mr-1 md:mr-2",
-                                                                        children: calculateScoreValue(throwItem.type, throwItem.value)
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                                        lineNumber: 278,
-                                                                        columnNumber: 31
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        onClick: ()=>handleRemoveThrow(index),
-                                                                        className: "text-red-500 hover:text-red-400 p-1",
-                                                                        children: "×"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                                        lineNumber: 281,
-                                                                        columnNumber: 31
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                                lineNumber: 277,
-                                                                columnNumber: 29
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-gray-500 text-xs md:text-sm",
-                                                        children: [
-                                                            "Kast ",
-                                                            index + 1
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                        lineNumber: 290,
-                                                        columnNumber: 27
-                                                    }, this)
-                                                }, index, false, {
+                            className: "mb-4",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-gray-700 rounded p-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm text-gray-400 mb-2",
+                                        children: [
+                                            "Aktuella kast (",
+                                            throws.length,
+                                            "/3):"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/game/[id]/page.tsx",
+                                        lineNumber: 262,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-2",
+                                        children: [
+                                            0,
+                                            1,
+                                            2
+                                        ].map((index)=>{
+                                            const throwItem = throws[index];
+                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: `flex-1 p-2 rounded ${throwItem ? 'bg-gray-600' : 'bg-gray-800'} min-h-[48px] flex flex-col justify-between`,
+                                                children: throwItem ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex justify-between items-start",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-xs",
+                                                                    children: renderThrowLabel(throwItem)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/game/[id]/page.tsx",
+                                                                    lineNumber: 276,
+                                                                    columnNumber: 31
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    onClick: ()=>handleRemoveThrow(index),
+                                                                    className: "text-red-500 hover:text-red-400 w-6 h-6 flex items-center justify-center rounded-full hover:bg-red-500/10",
+                                                                    children: "×"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/game/[id]/page.tsx",
+                                                                    lineNumber: 277,
+                                                                    columnNumber: 31
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/game/[id]/page.tsx",
+                                                            lineNumber: 275,
+                                                            columnNumber: 29
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "text-lg font-bold text-center",
+                                                            children: calculateScoreValue(throwItem.type, throwItem.value)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/game/[id]/page.tsx",
+                                                            lineNumber: 284,
+                                                            columnNumber: 29
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-gray-500 text-xs flex items-center justify-center h-full",
+                                                    children: [
+                                                        "Kast ",
+                                                        index + 1
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/src/app/game/[id]/page.tsx",
-                                                    lineNumber: 268,
-                                                    columnNumber: 23
-                                                }, this);
-                                            })
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/game/[id]/page.tsx",
-                                            lineNumber: 264,
-                                            columnNumber: 17
-                                        }, this),
-                                        errorMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs md:text-sm text-red-200",
-                                            children: errorMessage
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/game/[id]/page.tsx",
-                                            lineNumber: 297,
-                                            columnNumber: 19
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/game/[id]/page.tsx",
-                                    lineNumber: 262,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-gray-700 rounded p-3 md:p-4",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CheckoutSuggestion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        remainingScore: calculateRemainingScore(),
-                                        isActive: true
+                                                    lineNumber: 289,
+                                                    columnNumber: 27
+                                                }, this)
+                                            }, index, false, {
+                                                fileName: "[project]/src/app/game/[id]/page.tsx",
+                                                lineNumber: 267,
+                                                columnNumber: 23
+                                            }, this);
+                                        })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/game/[id]/page.tsx",
-                                        lineNumber: 305,
+                                        lineNumber: 263,
                                         columnNumber: 17
+                                    }, this),
+                                    errorMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-2 p-2 bg-red-900/50 border border-red-500 rounded text-xs text-red-200",
+                                        children: errorMessage
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/game/[id]/page.tsx",
+                                        lineNumber: 298,
+                                        columnNumber: 19
                                     }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/game/[id]/page.tsx",
-                                    lineNumber: 304,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/game/[id]/page.tsx",
+                                lineNumber: 261,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
                             fileName: "[project]/src/app/game/[id]/page.tsx",
                             lineNumber: 260,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "bg-gray-700 rounded p-3",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CheckoutSuggestion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                remainingScore: calculateRemainingScore(),
+                                isActive: true
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/game/[id]/page.tsx",
+                                lineNumber: 307,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/game/[id]/page.tsx",
+                            lineNumber: 306,
                             columnNumber: 13
                         }, this)
                     ]
@@ -1244,12 +1191,12 @@ function GamePage() {
                         disabled: !activePlayerId
                     }, void 0, false, {
                         fileName: "[project]/src/app/game/[id]/page.tsx",
-                        lineNumber: 316,
+                        lineNumber: 317,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/game/[id]/page.tsx",
-                    lineNumber: 315,
+                    lineNumber: 316,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1257,7 +1204,7 @@ function GamePage() {
                     children: "© 2025 Dart Scorer. Alla rättigheter reserverade."
                 }, void 0, false, {
                     fileName: "[project]/src/app/game/[id]/page.tsx",
-                    lineNumber: 329,
+                    lineNumber: 330,
                     columnNumber: 9
                 }, this)
             ]
